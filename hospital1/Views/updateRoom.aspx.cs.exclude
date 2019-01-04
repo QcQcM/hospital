@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Views_updateRoom : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void search_room_Click(object sender, EventArgs e)
+    {
+        List < Room > room = new List<Room>();
+        room = RoomService.QueryRoomByNum(search_room.Text);
+        for (int i = 0; i <room.Count(); i++)
+        {
+            room_num.Text = room[i].RoomNumber.ToString();
+            room_location.Text = room[i].Location.ToString();
+            room_department.Text = room[i].DepartNumber.ToString();
+        }
+    }
+protected void add_room_Click(object sender, EventArgs e)
+    {
+        room_num.Attributes.Add("readOnly", "False");
+        room_location.Attributes.Add("readOnly", "False");
+        room_department.Attributes.Add("readOnly", "False");
+    }
+
+    protected void delete_room_Click(object sender, EventArgs e)
+    {
+        RoomService.DeleteRoom(room_num.Text);
+        room_num.Text = "";
+        room_location.Text ="";
+        room_department.Text = "";
+    }
+
+    protected void ok_Click(object sender, EventArgs e)
+    {
+        RoomService.UpdateRoom(room_location.Text,room_department.Text,room_num.Text);
+    }
+}

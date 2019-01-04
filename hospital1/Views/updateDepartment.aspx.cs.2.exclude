@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Views_updateDepartment : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Search_Department_Click(object sender, EventArgs e)
+    {
+        List < Department > department = new List<Department>();
+        department = DepartmentService.QueryDepartmentByNum(Department_num.Text);
+        for(int i = 0; i < department.Count(); i++)
+        {
+            department_num1.Text = department[i].Number.ToString();
+            department_name.Text = department[i].Name.ToString();
+            department_user.Text = department[i].Manager.ToString();
+        }
+    }
+
+
+    protected void add_department_Click(object sender, EventArgs e)
+    {
+        department_num1.Attributes.Add("readOnly", "False");
+        department_name.Attributes.Add("readOnly", "False");
+        department_user.Attributes.Add("readOnly", "False");
+    }
+
+    protected void delete_department_Click(object sender, EventArgs e)
+    {
+        DepartmentService.DeleteDepartment(department_num1.Text);
+    }
+
+    protected void ok_Click(object sender, EventArgs e)
+    {
+        DepartmentService.UpdateDepartment(department_name.Text,department_user.Text,department_num1.Text);
+    }
+}
