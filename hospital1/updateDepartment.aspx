@@ -272,6 +272,7 @@
                               </div>
                            </div>
                       </div>
+                          </div>
                     </nav>
                 </ul> 
             </div>
@@ -307,7 +308,7 @@
                 
                 <li><a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-building-o"></i>医护人员管理 </a>
                     <ul id="forms" class="collapse list-unstyled">
-                        <li><a href="addUsers.aspx">添加</a></li> 
+                        <li><a href="addUser.aspx">添加</a></li> 
                         <li><a href="updateUsers.aspx">修改</a></li> 
                     </ul>
                 </li>

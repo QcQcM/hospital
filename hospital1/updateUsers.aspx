@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    
+   <form runat="server"> 
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -36,9 +36,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -268,6 +265,7 @@
                               </div>
                            </div>
                       </div>
+                          </div>
                     </nav>
                 </ul> 
             </div>
@@ -329,7 +327,7 @@
                             <h3><strong>修改医护人员</strong></h3>
                         </div>
                         <br>
-                    <form runat ="server">           
+                          
                     <div class="col-md-12">
                         <div class="panel panel-default" >
 
@@ -376,9 +374,9 @@
                             </div>
                         </div>
                     </div>
-                          </form>
-                    </div>
-  </div>
+               
+             </div>
+   </div>
   </div>
  </div>
 </div>
@@ -424,6 +422,7 @@
     }
 
     </script>
+       </form>
 </body>
 
 </html>
