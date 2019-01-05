@@ -15,6 +15,11 @@ public partial class searchFetchMedicine : System.Web.UI.Page
         }
         session.Text = Session["number"].ToString();
     }
+    protected void sign_up_Click(object sender, EventArgs e)
+    {
+        Session["number"] = null;
+        Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
+    }
     public void addFetchRecords(List<FetchRecords> list)
     {
         //将已知的医嘱list动态输出至页面

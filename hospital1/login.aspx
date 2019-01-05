@@ -37,7 +37,7 @@
           <div class="row">
             <div class="col-md-12 ">
                 <div class="contact-h-cont">
-                  <h3 class="text-center"><img src="img/logo.png" class="img-fluid" alt="" /></h3><br />
+                  <h3 class="text-center"><img src="img/logo1.png" class="img-fluid" alt="" /></h3><br />
                     <div class="form-group">
                       <label for="username">用户名</label>
                       <input runat="server" type="text" class="form-control" id="username" placeholder="请输入编号"  /> 

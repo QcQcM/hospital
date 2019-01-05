@@ -272,6 +272,7 @@
                               </div>
                            </div>
                       </div>
+                          </div>
                     </nav>
                 </ul> 
             </div>
@@ -290,7 +291,7 @@
               <div class="title">
                      <asp:Label ID="session" runat="server"></asp:Label>
                </div>
-                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
+                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -307,7 +308,7 @@
                 
                 <li><a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-building-o"></i>医护人员管理 </a>
                     <ul id="forms" class="collapse list-unstyled">
-                        <li><a href="addUsers.aspx">添加</a></li> 
+                        <li><a href="addUser.aspx">添加</a></li> 
                         <li><a href="updateUsers.aspx">修改</a></li> 
                     </ul>
                 </li>

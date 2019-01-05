@@ -15,6 +15,11 @@ public partial class manageDevice : System.Web.UI.Page
         }
         session.Text = Session["number"].ToString();
     }
+    protected void sign_up_Click(object sender, EventArgs e)
+    {
+        Session["number"] = null;
+        Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
+    }
     protected void Search_Drug_Click(object sender, EventArgs e)
     {
         List<Device> device = new List<Device>();

@@ -13,6 +13,7 @@ public partial class Views_addRoom : System.Web.UI.Page
         {
             Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
         }
+        System.Diagnostics.Debug.Write(Session["number"]);
         session.Text = Session["number"].ToString();
     }
 
@@ -23,5 +24,10 @@ public partial class Views_addRoom : System.Web.UI.Page
                 Response.Write("<script language=javascript>window.alert('添加病房成功');</script>");
             }
         }
+    }
+    protected void sign_up_Click(object sender, EventArgs e)
+    {
+        Session["number"] = null;
+        Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
     }
 }

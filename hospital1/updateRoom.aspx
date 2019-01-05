@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    
+    <form runat="server">
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -37,9 +37,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -287,7 +284,7 @@
                 <div class="title">
                      <asp:Label ID="session" runat="server"></asp:Label>
                </div>
-                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
+                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -329,8 +326,7 @@
                         <div class="card-header">
                             <h3>修改病房</h3>
                         </div>
-                        <br>
-                                                                  <form runat ="server">           
+                        <br>  
                     <div class="col-md-12">
                         <div class="panel panel-default" >
                            
@@ -365,7 +361,6 @@
                             </div>
                         </div>
                     </div>
-                          </form>
                     </div>
   </div>
   </div>
@@ -413,6 +408,7 @@
     }
 
     </script>
+    </form>
 </body>
 
 </html>
