@@ -331,7 +331,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">科室名称</label>
                                         <asp:TextBox ID="text1" runat ="server" class="form-control"></asp:TextBox>
-                                        
+                                       
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">科室编号</label>
@@ -346,9 +346,12 @@
                              </div>   
                                 <div style ="margin-left:90px">      
                             <asp:Button ID="Button1" runat="server" Text="添加" class="btn btn-primary" OnClick="Button1_Click1"/> 
-                            </div>    
-                              
                             
+                            </div>    
+                              <asp:RequiredFieldValidator ID ="RequiredFieldValidator1" runat ="server" ErrorMessage="必须填写科室名" Font-Bold ="true" ControlToValidate ="text1" Display ="None" ></asp:RequiredFieldValidator>
+                              <asp:RequiredFieldValidator ID ="RequiredFieldValidator2" runat ="server" ErrorMessage="必须填写科室编号" Font-Bold ="true" ControlToValidate ="TextBox2" Display ="None" ></asp:RequiredFieldValidator>
+                              <asp:RequiredFieldValidator ID ="RequiredFieldValidator3" runat ="server" ErrorMessage="必须填写负责人" Font-Bold ="true" ControlToValidate ="TextBox3" Display ="None" ></asp:RequiredFieldValidator>
+                              <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/>
                        
                     </div>
   </div>

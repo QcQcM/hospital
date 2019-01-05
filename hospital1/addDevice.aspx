@@ -313,7 +313,7 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" style="width: 85px;" class=" col-form-label">设备编号</label>
                                     <div class="col-9">
-                                        <asp:TextBox ID ="device_num" runat="server" class="form-control"/>
+                                        <asp:TextBox ID ="device_num" runat="server" class="form-control"/>                         
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -344,6 +344,12 @@
                                     <asp:Button ID="Add" runat ="server" class="btn btn-primary" Text ="添加" OnClick="Add_Click" />
                                     </div>
                             </div>
+                            <asp:RequiredFieldValidator ID="rev1" runat ="server" ErrorMessage="必须填写设备编号" Font-Bold ="true" Display ="None" ControlToValidate ="device_num" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat ="server" ErrorMessage="必须填写设备名" Font-Bold ="true" Display ="None" ControlToValidate ="device_name" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat ="server" ErrorMessage="必须填写制造厂家" Font-Bold ="true" Display ="None" ControlToValidate ="manufacturer" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat ="server" ErrorMessage="必须填写单次使用价格" Font-Bold ="true" Display ="None" ControlToValidate ="single_price" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat ="server" ErrorMessage="必须填写所属科室编号" Font-Bold ="true" Display ="None" ControlToValidate ="depart_num" />
+                            <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/>
                         </div> 
                     </div>
                  

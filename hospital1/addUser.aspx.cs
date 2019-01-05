@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +15,11 @@ public partial class Views_addUser : System.Web.UI.Page
             Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
         }
         session.Text = Session["number"].ToString();
+        
+        DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from department");
+        user_department.DataSource = dt;
+        user_department.DataTextField = "d_name";
+        user_department.DataBind();
     }
 
     protected void user_add_Click(object sender, EventArgs e)

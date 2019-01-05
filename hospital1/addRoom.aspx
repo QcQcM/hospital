@@ -333,23 +333,26 @@
                                     <div class="form-group">
                                         <label>病房编号</label>
                                         <asp:TextBox ID="room_num" runat ="server" class="form-control"></asp:TextBox>
-                                        
+                                        <asp:RequiredFieldValidator ID="rev1" ControlToValidate ="room_num"  runat ="server" ErrorMessage="必须填写病房编号" Font-Bold ="true" Display ="None"/>
                                     </div>
                                     <div class="form-group">
                                         <label>病房位置</label>
                                         <asp:TextBox ID="room_location" runat ="server" class="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="room_location"  runat ="server" ErrorMessage="必须填写病房位置" Font-Bold ="true" Display ="None"/>
                                     </div>  
                                      
                                      <div class="form-group">
                                         <label>所属科室</label>
                                         <asp:TextBox ID="room_department" runat ="server" class="form-control"></asp:TextBox>
-                                    </div>      
+                                          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="room_department"  runat ="server" ErrorMessage="必须填写病房所属部门" Font-Bold ="true" Display ="None"/>
+                                    </div> 
+                                    <div style ="margin-left:200px">      
+                                        <asp:Button ID="Button1" runat="server" Text="添加" class="btn btn-primary" OnClick="add_Room_Click"/>   
                                     </div>
-                             <div style ="margin-left:300px">      
-                            <asp:Button ID="add_Room" runat="server" Text="添加" class="btn btn-primary" OnClick="add_Room_Click"/>   
-                            </div>
+                                    </div>
+                             
                                 </div>
-                   
+                   <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/>
                     </div>
   </div>
   </div>

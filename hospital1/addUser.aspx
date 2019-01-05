@@ -301,7 +301,7 @@
                 
                 <li><a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-building-o"></i>医护人员管理 </a>
                     <ul id="forms" class="collapse list-unstyled">
-                        <li><a href="addUsers.aspx">添加</a></li> 
+                        <li><a href="addUser.aspx">添加</a></li> 
                         <li><a href="updateUsers.aspx">修改</a></li> 
                     </ul>
                 </li>
@@ -373,25 +373,7 @@
                                     <div class="form-group">
                                         <label>所属科室</label>
                                         <asp:DropDownList ID="user_department" runat="server" class="form-control">
-                                        <asp:ListItem>呼吸内科</asp:ListItem>
-                                        <asp:ListItem>普外科</asp:ListItem>
-                                        <asp:ListItem>骨科</asp:ListItem>
-                                        <asp:ListItem>神经外科</asp:ListItem>
-                                        <asp:ListItem>肝胆外科</asp:ListItem>
-                                        <asp:ListItem>泌尿外科</asp:ListItem>
-                                        <asp:ListItem>烧伤科</asp:ListItem>
-                                        <asp:ListItem>妇科</asp:ListItem>
-                                        <asp:ListItem>产科</asp:ListItem>
-                                        <asp:ListItem>血透室</asp:ListItem>
-                                        <asp:ListItem>重症监护科</asp:ListItem>
-                                        <asp:ListItem>消化内科</asp:ListItem>
-                                        <asp:ListItem>泌尿内科</asp:ListItem>
-                                        <asp:ListItem>心内科</asp:ListItem>
-                                        <asp:ListItem>血液科</asp:ListItem>
-                                        <asp:ListItem>内分泌科</asp:ListItem>
-                                        <asp:ListItem>神经内科</asp:ListItem>
-                                        <asp:ListItem>小儿科</asp:ListItem>
-                                        <asp:ListItem>感染科</asp:ListItem>
+                                        
                                         </asp:DropDownList>
                                      </div>
                               </div>   
@@ -399,8 +381,16 @@
                           <div style ="margin-left:270px">      
                             <asp:Button ID="user_add" runat="server" Text="添加" class="btn btn-primary" OnClick="user_add_Click"/>  
                           </div>    
-                              
-             
+                         <asp:RequiredFieldValidator ID="rev1" ControlToValidate ="user_num"  runat ="server" ErrorMessage="必须填写编号" Font-Bold ="true" Display ="None"/>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="user_name"  runat ="server" ErrorMessage="必须填写姓名" Font-Bold ="true" Display ="None"/> 
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="user_password"  runat ="server" ErrorMessage="必须填写密码" Font-Bold ="true" Display ="None"/>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate ="user_type"  runat ="server" ErrorMessage="必须填写用户类型" Font-Bold ="true" Display ="None"/> 
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate ="user_phone"  runat ="server" ErrorMessage="必须填写联系方式" Font-Bold ="true" Display ="None"/>  
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="user_sex"  runat ="server" ErrorMessage="必须填写性别" Font-Bold ="true" Display ="None"/>  
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="user_department"  runat ="server" ErrorMessage="必须填写所属科室" Font-Bold ="true" Display ="None"/>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="user_age"  runat ="server" ErrorMessage="必须填写年龄" Font-Bold ="true" Display ="None"/>
+                       <asp:RangeValidator ID="rev2" runat ="server" Display ="None" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" />
+                          <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/> 
                     </div>
   </div>
   </div>
