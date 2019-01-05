@@ -283,7 +283,7 @@
                  <div class="title">
                      <asp:label id="session" runat="server"></asp:label>
                </div>
-                <asp:imagebutton runat="server" id="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
+                <asp:imagebutton runat="server" id="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->

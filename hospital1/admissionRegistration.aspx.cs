@@ -54,7 +54,11 @@ public partial class admissionRegistration : System.Web.UI.Page
         
         
     }
-    
+    protected void sign_up_Click(object sender, EventArgs e)
+    {
+        Session["number"] = null;
+        Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
+    }
     protected void NativeProvinceList_SelectedIndexChanged(object sender, EventArgs e)
     {
        // Response.Write("<script>alert('我响应了！')</script>");
