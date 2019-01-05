@@ -398,13 +398,13 @@
                         <article class="search-result row">
                              <div class="col-xs-12 col-sm-12 col-md-1">                 
                                 <h5><a href="#" title="">入院日期</a></h5>
-                                <asp:label runat="server" font-size="Medium" id="patient_admissiontime"></asp:label> 20190105</div>
+                                <asp:label runat="server" font-size="Medium" id="patient_admissiontime"></asp:label> </div>
                              <div class="col-xs-12 col-sm-12 col-md-1">                 
                                 <h5><a href="#" title="">出院日期</a></h5>
-                                <asp:label runat="server" font-size="Medium" id="patient_dischargetime"></asp:label> 20190105</div>
+                                <asp:label runat="server" font-size="Medium" id="patient_dischargetime"></asp:label> </div>
                             <div class="col-xs-12 col-sm-12 col-md-1">
                                 <h5><a href="#" title="">主治医生</a></h5>
-                                <asp:label runat="server" font-size="Medium" id="patient_doctor"></asp:label>11111111111</div>
+                                <asp:label runat="server" font-size="Medium" id="patient_doctor"></asp:label></div>
                              <div class="col-xs-12 col-sm-12 col-md-1">
                                 <h5><a href="#" title="">病房号</a></h5>
                                 <asp:label runat="server" font-size="Medium" id="patient_room_number"></asp:label> </div>

@@ -53,11 +53,12 @@
         </div>
       </section>
       
-   </form>      
+  
     <!--Global Javascript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+           </form>    
 </body>
 
 </html>

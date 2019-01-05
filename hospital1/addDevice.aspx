@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    
+      <form runat="server">
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -278,6 +278,7 @@
        
         <!--***** SIDE NAVBAR *****-->
         <nav class="side-navbar">
+        
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title">
@@ -285,6 +286,7 @@
                </div>
                 <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
+             
             <hr>
             <!-- Sidebar Navidation Menus-->
              <ul class="list-unstyled">
@@ -300,7 +302,7 @@
 
 
                     <!--***** 药品入库*****-->
-                    <form runat ="server" >
+                 
                     <div class="card form" id="form2">
                         <div class="card-header" style ="margin-left:300px">
                             <h3>添加设备</h3>
@@ -344,7 +346,7 @@
                             </div>
                         </div> 
                     </div>
-                        </form>
+                 
 
                     
 
@@ -391,6 +393,7 @@
             }
         });
     </script>
+          </form>
 </body>
 
 </html>

@@ -270,6 +270,7 @@
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->
+    
     <div class="page-content d-flex align-items-stretch">
 
         <!--***** SIDE NAVBAR *****-->
@@ -277,9 +278,9 @@
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                  <div class="title">
-                     <asp:Label ID="session" runat="server"></asp:Label>
+                     <asp:label id="session" runat="server"></asp:label>
                </div>
-                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
+                <input type="image" name="sign_up" id="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->

@@ -35,10 +35,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
-                <button class="dismiss"><i class="icon-close"></i></button>
-               
-                    <input type="search" placeholder="Search Now" class="form-control">
-                
+                <button class="dismiss"><i class="icon-close"></i></button>               
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
