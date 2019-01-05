@@ -28,14 +28,12 @@
 <body> 
 <!--====================================================
                          MAIN NAVBAR
-======================================================-->        
+======================================================-->   
+    <form runat="server">
     <header class="header">
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
-                <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
+                <button class="dismiss"><i class="icon-close"></i></button> 
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -279,11 +277,15 @@
         <!--***** SIDE NAVBAR *****-->
         <nav class="side-navbar">
             <div class="sidebar-header d-flex align-items-center">
+     
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+   
                 <div class="title">
-                   <asp:Label ID="session" runat="server"></asp:Label>
-                </div>
+                     <asp:Label ID="session" runat="server"></asp:Label>
+               </div>               
+                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
+
             <hr>
             <!-- Sidebar Navidation Menus-->
             <ul class="list-unstyled">
@@ -302,7 +304,6 @@
         <div class="content-inner chart-cont">
             <!--***** CONTENT *****--> 
             <div class="card p-4">
-                <form runat="server">
                     <br />
                     <div style="padding-left:420px" class="row">
                     <div>
@@ -313,7 +314,6 @@
                      <asp:Button runat="server" class="btn btn-primary btn-sm" text="搜索" ID="patient_num_search" OnClick="Button2_Click" ></asp:button>                                    
                      </div>
                    </div>
-                 </form> 
                 <br />  <br />
                 <div class="row">   
                  
@@ -477,7 +477,7 @@
 </script>
 <script type="text/javascript" src="http://localhost:31607/a92bb385c4774013b265965e1f3a693c/browserLink" async="async"></script>
 <!-- End Browser Link -->
-
+        </form>
 </body>
 
 </html>

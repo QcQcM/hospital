@@ -13,7 +13,10 @@ public partial class doctorMedicine : System.Web.UI.Page
         {
             Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
         }
-        session.Text = Session["number"].ToString();
+        else         
+        {
+            session.Text = Session["number"].ToString();
+        }
     }
 
     protected void ok_Click(object sender, EventArgs e)

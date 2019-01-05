@@ -276,9 +276,10 @@
         <nav class="side-navbar">
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                <div class="title">
-                    <asp:Label ID="session" runat="server"></asp:Label>
-                </div>
+                 <div class="title">
+                     <asp:Label ID="session" runat="server"></asp:Label>
+               </div>
+                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -311,7 +312,7 @@
                      </div>
                      <div>
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     <asp:Button runat="server" class="btn btn-primary btn-sm" text="确认出院" ID="Button1" OnClick="Button1_Click" ></asp:button>                                    
+                     <asp:Button runat="server" class="btn btn-primary btn-sm" text="确认出院"  ID="Button1" OnClick="Button1_Click" ></asp:button>                                    
                      </div>
                    </div>
          
