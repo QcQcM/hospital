@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    
+    <form runat ="server" > 
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -33,9 +33,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -275,13 +272,13 @@
         <!--***** SIDE NAVBAR *****-->
         <nav class="side-navbar">
             <div class="sidebar-header d-flex align-items-center">
-                <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"/></div>
                 <div class="title">
                      <asp:Label ID="session" runat="server"></asp:Label>
                </div>
                 <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
-            <hr>
+            <hr/>
             <!-- Sidebar Navidation Menus-->
             <ul class="list-unstyled">
                 <li> <a href="addMedicine.aspx"><i class="icon-home"></i>药品入库</a></li>
@@ -298,14 +295,14 @@
 
 
                     <!--***** 药品入库*****-->
-                    <form runat ="server" >
+                   
                     <div class="card form" id="form2">
-                        <div class="card-header" style ="margin-left:300px">
+                        <div class="card-header">
                             <h3>药品入库</h3>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-6" style ="margin-left:150px">
+                            <div class="col-md-6" style ="margin-left:20px">
                                 <div class="form-group row">
                                     <label for="example-text-input" style="width: 85px;" class=" col-form-label">药品编号</label>
                                     <div class="col-9">
@@ -342,16 +339,12 @@
                                         <asp:TextBox ID ="type" runat="server" class="form-control"/>
                                     </div>
                                 </div>
-                                <div style ="margin-left :190px">
+                                <div style ="padding-left :420px">
                                     <asp:Button ID="Add" runat ="server" class="btn btn-primary" Text ="添加" OnClick="Add_Click" />
                                     </div>
                             </div>
                         </div> 
                     </div>
-                        </form>
-
-                    
-
                 </div>
             </div>
         </div>
@@ -395,6 +388,7 @@
             }
         });
     </script>
+                    </form>
 </body>
 
 </html>

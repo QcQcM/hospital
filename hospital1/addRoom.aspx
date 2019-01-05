@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    
+    <form runat ="server">
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -36,9 +36,7 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
+               
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -329,7 +327,7 @@
                             <h3>添加病房</h3>
                         </div>
                         <br>
-                        <form runat ="server">
+                        
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -351,7 +349,7 @@
                             <asp:Button ID="add_Room" runat="server" Text="添加" class="btn btn-primary" OnClick="add_Room_Click"/>   
                             </div>
                                 </div>
-                        </form>
+                   
                     </div>
   </div>
   </div>
@@ -399,6 +397,7 @@
     }
 
     </script>
+         </form>
 </body>
 
 </html>

@@ -26,7 +26,7 @@
 </head>
 
 <body> 
-
+     <form runat ="server" >
 <!--====================================================
                          MAIN NAVBAR
 ======================================================-->        
@@ -34,9 +34,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -314,7 +311,7 @@
                         </div>
                      <div class="col-md-12">
                         <div class="panel panel-default" >
-                           <form runat ="server" >
+                          
                          
                                 <div class="table-responsive">
                                     <table class="table-responsive" style ="width:900px;height:400px" cellpadding="0">
@@ -414,7 +411,7 @@
                                        
                                     </div>
                                 </div>
-                                 </form>
+
                             </div>
                              
                         </div>
@@ -515,5 +512,6 @@
 
       $(document).snowfall({ flakeCount: 100, collection: '.collectonme', maxSpeed: 10 });
     </script> 
+         </form>
 </body>
 </html>

@@ -26,7 +26,8 @@
 </head>
 
 <body>
-    
+   <form runat ="server" >
+                           
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -34,9 +35,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -303,10 +301,9 @@
                         <div class="card-header">
                             <h3>开药</h3>
                         </div>
-                     <div class="col-md-12">
+                     <div class="col-md-12" style="margin-top:20px">
                         <div class="panel panel-default" >
-                           <form runat ="server" >
-                         
+                          
                                 <div class="table-responsive">
                                     <table class="table-responsive" style ="width:900px;height:400px" cellpadding="0">
                                             <tr class="bg-info text-white">
@@ -410,13 +407,13 @@
                                            </tr>
                                         
                                     </table>
-                                    
-                                    <div style ="margin-left :350px">
+                                  
+                                    <div style ="margin-left :420px;margin-top:20px">
                                         <asp:Button  ID="ok" runat="server" text="确定" class="btn btn-outline-primary" OnClick="ok_Click1"/>
                                        
                                     </div>
                                 </div>
-                                 </form>
+
                             </div>
                              
                         </div>
@@ -464,5 +461,6 @@
             }
         });
     </script>
+       </form>
 </body>
 </html>
