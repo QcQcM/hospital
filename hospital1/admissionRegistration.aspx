@@ -134,7 +134,6 @@
                                 <a rel="nofollow" href="#" class="dropdown-item d-flex">
                                     <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                                     <div class="msg-body">
-                                       <asp:Label ID="session" runat="server"></asp:Label>
                                     </div>
                                 </a>
                                 <hr>
@@ -286,8 +285,9 @@
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title">
-                    <h1 class="h4">黄翼新</h1>
-                </div>
+                     <asp:Label ID="session" runat="server"></asp:Label>
+               </div>
+                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -324,7 +324,7 @@
                                         <asp:TextBox ID="name" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                   <div class="form-group row">
                                     <label for="sex" style="width: 85px;" class=" col-form-label">性别</label>
                                     <div class="col-9">
                                         <asp:DropDownList ID="sex" runat="server" >
