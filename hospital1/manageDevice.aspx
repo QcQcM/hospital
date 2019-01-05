@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    
+       <form runat="server">
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -34,9 +34,7 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
+
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -276,13 +274,13 @@
         <!--***** SIDE NAVBAR *****-->
         <nav class="side-navbar">
             <div class="sidebar-header d-flex align-items-center">
-                <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></img></div>
                 <div class="title">
                      <asp:Label ID="session" runat="server"></asp:Label>
                </div>
                 <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
-            <hr>
+
             <!-- Sidebar Navidation Menus-->
             <ul class="list-unstyled">
                  <li> <a href="addDevice.aspx"><i class="icon-home"></i>添加设备</a></li>
@@ -301,7 +299,7 @@
                             <h3><strong>库存管理</strong></h3>
                         </div>
                         <br>
-                   <form runat ="server">           
+                 
                     <div class="col-md-12">
                         <div class="panel panel-default" >
                            
@@ -333,16 +331,14 @@
                                     
                                     <div style="margin-bottom:3cm;margin-left:350px">
                                         
-                                        <asp:Button ID="update_device" runat="server" Text="修改"  class="btn btn-general btn-blue mr-3" OnClick="update_drug_Click"/> 
+                                        <asp:Button ID="update_device" runat="server" Text="修改"  class="btn btn-general btn-blue mr-3" OnClick="update_drug_Click" />
                                         <asp:Button ID="delete_device" runat="server" Text="删除"  class="btn btn-general btn-blue mr-3" OnClick="delete_drug_Click"/> 
                                         <asp:Button ID="ok" runat="server" Text="确定"  class="btn btn-general btn-blue mr-3" OnClick="ok_Click"/> 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                          
-                          </form>
+                    </div>                                            
                     </div>
   </div>
   </div>
@@ -388,6 +384,7 @@
             }
         });
     </script>
+    </form>
 </body>
 </html>
 

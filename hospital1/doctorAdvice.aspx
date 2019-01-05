@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    
+    <form runat ="server" >
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -34,9 +34,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -312,18 +309,18 @@
                             <h3><strong>医嘱</strong></h3>
                         </div>
                         <br>
-                        <form runat ="server" >
+                        
                         <div class="row">
                            
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label for="example-text-input" style="width: 85px;" class=" col-form-label">医生编号</label>
+                                    <label for="example-text-input" style="width: 85px;margin-left:10px" class=" col-form-label" >医生编号</label>
                                     <div class="col-9">
                                         <asp:TextBox runat="server" ID="doctor_num" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="example-search-input" style="width: 85px;" class=" col-form-label">病人编号</label>
+                                    <label for="example-search-input" style="width: 85px;margin-left:10px" class=" col-form-label">病人编号</label>
                                     <div class="col-9">
                                         <asp:TextBox runat="server" ID="patient_num" class="form-control" />
                                     </div>
@@ -333,13 +330,13 @@
                             <div class="col-md-6">
                                
                                 <div class="form-group row">
-                                    <label for="example-date-input" style="width: 85px;" class=" col-form-label">医生姓名</label>
+                                    <label for="example-date-input" style="width: 85px;margin-left:10px" class=" col-form-label">医生姓名</label>
                                     <div class="col-9">
                                         <asp:TextBox runat="server" ID="doctor_name" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                        <label for="example-date-input" style="width: 85px;" class=" col-form-label">医嘱类型</label>
+                                        <label for="example-date-input" style="width: 85px;margin-left:10px" class=" col-form-label">医嘱类型</label>
                                       <div class="col-9">
                                         <asp:DropDownList ID ="type" runat ="server" class="form-control" >
                                             <asp:ListItem Text="出院医嘱"></asp:ListItem>
@@ -359,12 +356,11 @@
                                 </div>
                             </div>
                             <div style ="margin-left :300px">
-                            <asp:Button  ID="ok" runat="server" Text="确定" class="btn btn-primary" OnClick="ok_Click"/>
+                            <asp:Button  ID="ok" runat="server" Text="确定" style="margin-left:10px" class="btn btn-primary" OnClick="ok_Click" />
                             </div>
                                 
 
                                
-                            </form>
                         </div> 
                     </div>
 
@@ -417,6 +413,7 @@
             }
         });
     </script>
+        </form>
 </body>
 
 </html>

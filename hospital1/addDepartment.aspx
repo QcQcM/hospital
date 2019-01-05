@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    
+  <form runat ="server">  
 <!--====================================================
                      MAIN NAVBAR
 ======================================================-->
@@ -35,13 +35,11 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
                     <div class="navbar-header">
+                        <a href="index.html" class="navbar-brand">
                             <div class="brand-text brand-big hidden-lg-down"><img src="img/logo-white.png" alt="Logo" class="img-fluid"></div>
                             <div class="brand-text brand-small"><img src="img/logo-icon.png" alt="Logo" class="img-fluid"></div>
                         </a>
@@ -169,8 +167,8 @@
                         </ul>
                     </li>
                     <li class="nav-item d-flex align-items-center"><a id="menu-toggle-right" class="nav-link" href="#"><i class="fa fa-bars"></i></a></li>
-                    <nav id="sidebar-wrapper"  />
-                      <div class="sidebar-nav" > 
+                    <nav id="sidebar-wrapper">
+                      <div class="sidebar-nav"> 
                         <div class="tab" role="tabpanel"> 
                             <ul class="nav nav-tabs" role="tablist">
                               <li class="nav-item ">
@@ -266,6 +264,7 @@
                               </div>
                            </div>
                       </div>
+                      </div>
                     </nav>
                 </ul> 
             </div>
@@ -281,10 +280,10 @@
                 <nav class="side-navbar">
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                <<div class="title">
-                     <asp:Label ID="session" runat="server"></asp:Label>
+                 <div class="title">
+                     <asp:label id="session" runat="server"></asp:label>
                </div>
-                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
+                <asp:imagebutton runat="server" id="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -326,7 +325,7 @@
                             <h3>科室管理</h3>
                         </div>
                         <br>
-                        <form runat ="server">
+                        
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -350,7 +349,7 @@
                             </div>    
                               
                             
-                        </form>
+                       
                     </div>
   </div>
   </div>
@@ -398,6 +397,7 @@
     }
 
     </script>
+       </form>
 </body>
 
 </html>
