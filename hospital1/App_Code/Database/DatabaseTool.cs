@@ -58,6 +58,7 @@ public class DatabaseTool
             while (reader.Read())
             {
                 result = reader[item];
+            System.Diagnostics.Debug.Write("结果为："+result+"\n");
             }
            reader.Close();
             return result;

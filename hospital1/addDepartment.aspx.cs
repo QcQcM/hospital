@@ -30,5 +30,9 @@ public partial class Views_addDepartment : System.Web.UI.Page
         {
             Response.Write("<script language=javascript>window.alert('添加科室成功');</script>");
         }
+        else
+        {
+            Response.Write("<script language=javascript>window.alert('该科室编号已存在，请输入其他编号！');</script>");
+        }
     }
 }

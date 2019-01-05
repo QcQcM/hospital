@@ -105,6 +105,10 @@ public partial class admissionRegistration : System.Web.UI.Page
         {
             Response.Write("<script language=javascript>window.alert('病人入院登记成功！');</script>");
         }
+        else
+        {
+            Response.Write("<script language=javascript>window.alert('该病人编号已存在，请输入其他编号！');</script>");
+        }
     }
     
 }

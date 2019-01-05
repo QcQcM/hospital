@@ -24,12 +24,20 @@ using System.Web;
     //执行插入操作
     public static int AddPatient(Patient patient)
         {
+        //根据病人id查找病人名字，如果找到病人名字，说明有对应id的记录（因为名字不能为空），说明输入的病人id无效
+        if (DatabaseTool.ExeclSqlReturnItem(string.Format(SELECT_PATIENT_BY_ID, patient.Id),"p_name").ToString().Equals("-1")==false)
+        {
+            return -1;
+        }
+        else
+        {
             System.Diagnostics.Debug.Write(String.Format(INSERT_PATIENT_SQL, patient.Id, patient.Name, patient.Sex, patient.Age, patient.Tel, patient.Department, patient.DrugAllergy, patient.MedicalHistory, patient.RoomNum, patient.BedNum, patient.PhysicanNum, patient.AdmissionTime, "", patient.IDNum, patient.BirthDate, patient.Nation, patient.Country, patient.Marriage, patient.Occupation, patient.NativePlace, patient.BirthPlace, patient.Address, patient.WorkingPlace, patient.WorkingTel, patient.Diagonse, 1));
-            if (DatabaseTool.ExecSql(String.Format(INSERT_PATIENT_SQL, patient .Id, patient.Name, patient.Sex, patient.Age,patient.Tel, patient.Department, patient.DrugAllergy,patient.MedicalHistory, patient.RoomNum, patient.BedNum, patient.PhysicanNum, patient.AdmissionTime, "", patient.IDNum, patient.BirthDate, patient.Nation, patient.Country, patient.Marriage, patient.Occupation, patient.NativePlace, patient.BirthPlace, patient.Address, patient.WorkingPlace, patient.WorkingTel, patient.Diagonse,1)))
+            if (DatabaseTool.ExecSql(String.Format(INSERT_PATIENT_SQL, patient.Id, patient.Name, patient.Sex, patient.Age, patient.Tel, patient.Department, patient.DrugAllergy, patient.MedicalHistory, patient.RoomNum, patient.BedNum, patient.PhysicanNum, patient.AdmissionTime, "", patient.IDNum, patient.BirthDate, patient.Nation, patient.Country, patient.Marriage, patient.Occupation, patient.NativePlace, patient.BirthPlace, patient.Address, patient.WorkingPlace, patient.WorkingTel, patient.Diagonse, 1)))
             {
                 return DatabaseTool.GetLastInsertId();
             }
             else return -1;
+        }
         }
         //按病人ID查找病人的操作
         public static List<Patient> GetPatientsById(String ID)

@@ -329,12 +329,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">科室名称</label>
+                                        <label for="exampleInputEmail1">科室编号</label>
                                         <asp:TextBox ID="text1" runat ="server" class="form-control"></asp:TextBox>
                                         
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">科室编号</label>
+                                        <label for="exampleInputPassword1">科室名称</label>
                                         <asp:TextBox ID="TextBox2" runat ="server" class="form-control"></asp:TextBox>
                                     </div>  
                                      

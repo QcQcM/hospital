@@ -29,12 +29,21 @@ using System.Web;
         }
         public static int AddDepartment(String departNum, String departName, String departManager)
         {
-            if (DatabaseTool.ExecSql(String.Format(INSERT_DEPARTMENT_SQL,departNum,departName,departManager)))
+        //先检查插入的科室编号是否重复，如果重复返回失败-1
+        String result = DatabaseTool.ExeclSqlReturnItem(string.Format(QUERY_DEPARTMENT_SQL, departNum), "d_name").ToString();
+        if(result.Equals("-1") == false)
+        {
+            return -1;
+        }
+        else {
+            if (DatabaseTool.ExecSql(String.Format(INSERT_DEPARTMENT_SQL, departNum, departName, departManager)))
             {
                 return DatabaseTool.GetLastInsertId();
             }
             else return -1;
         }
+    }
+        
         //根据科室号删除科室
         public static bool DeleteDepartment(String departNum)
         {
