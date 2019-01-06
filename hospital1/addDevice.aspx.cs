@@ -27,6 +27,10 @@ public partial class addDevice : System.Web.UI.Page
         {
             Response.Write("<script language=javascript>window.alert('添加设备成功！');</script>");
         }
-       
+        else
+        {
+            Response.Write("<script language=javascript>window.alert('该设备编号已存在，请输入其他编号！');</script>");
+        }
+
     }
 }

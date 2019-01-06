@@ -33,6 +33,10 @@ public class RoomService
     //添加病房
     public static int AddRoom(String roomNum, String location, String departNum)
     {
+        if (DatabaseTool.ExeclSqlReturnItem(string.Format(QUERY_ROOM_SQL, roomNum), "r_num").ToString().Equals("-1") == false)
+        {
+            return -1;
+        }
         if (DatabaseTool.ExecSql(String.Format(INSERT_ROOM_SQL,roomNum, location, departNum)))
         {
             return DatabaseTool.GetLastInsertId();

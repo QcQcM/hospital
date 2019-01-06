@@ -33,6 +33,10 @@ public class DeviceService
     //添加设备
     public static int AddDevice(String deviceNum, String deviceName, String manufacter, Decimal single_price, String dep_num)
     {
+        if (DatabaseTool.ExeclSqlReturnItem(string.Format(QUERY_DEVICE_SQL, deviceNum), "d_name").ToString().Equals("-1") == false)
+        {
+            return -1;
+        }
         if (DatabaseTool.ExecSql(String.Format(INSERT_DEVICE_SQL, deviceNum, deviceName, manufacter, single_price, dep_num)))
         {
             return DatabaseTool.GetLastInsertId();

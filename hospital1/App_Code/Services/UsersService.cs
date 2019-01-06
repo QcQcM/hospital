@@ -34,6 +34,10 @@ public class UsersService
     //添加用户
     public static int AddUsers(String UserNum,String UserName,int type,String password,String sex,int age,String tel,String departNum)
     {
+        if (DatabaseTool.ExeclSqlReturnItem(string.Format(QUERY_USERS_SQL, UserNum), "u_name").ToString().Equals("-1") == false)
+        {
+            return -1;
+        }
         if (DatabaseTool.ExecSql(String.Format(INSERT_USERS_SQL, UserNum, UserName, type,password,sex,age,tel,departNum)))
         {
             return DatabaseTool.GetLastInsertId();
