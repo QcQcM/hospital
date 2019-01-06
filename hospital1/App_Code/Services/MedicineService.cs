@@ -29,7 +29,11 @@ public class MedicineService
         //添加药品
         public static int AddMedicine(String medNum,String medName,String manufactor,Decimal price,Int32 amount,String type)
         {
-            if (DatabaseTool.ExecSql(String.Format(INSERT_MEDICINE_SQL, medNum, medName, manufactor,price,amount,type)))
+        if (DatabaseTool.ExeclSqlReturnItem(string.Format(QUERY_MEDICINE_SQL, medNum), "m_name").ToString().Equals("-1") == false)
+        {
+            return -1;
+        }
+        if (DatabaseTool.ExecSql(String.Format(INSERT_MEDICINE_SQL, medNum, medName, manufactor,price,amount,type)))
             {
                 return DatabaseTool.GetLastInsertId();
             }

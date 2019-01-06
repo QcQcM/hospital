@@ -33,9 +33,6 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -332,6 +329,7 @@
                                     <label for="example-url-input" style="width: 85px;" class=" col-form-label">单次使用价格</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="single_price" runat="server" class="form-control"/>
+                                        <asp:RangeValidator ID="rev2" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="单次使用价格应在0到50000之间" ControlToValidate ="single_price" MaximumValue ="50000" MinimumValue ="0" />
                                     </div>
                                 </div>
                                 <div class="form-group row">

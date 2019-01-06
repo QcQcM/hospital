@@ -44,6 +44,7 @@ public partial class doctorMedicine : System.Web.UI.Page
             else
             {
                 OrderService.AddOrder(patient_num[i], examination_num[i], int.Parse(examination[i]), doctor[i], order[i], j, time[i]);
+
             }
         }
 
