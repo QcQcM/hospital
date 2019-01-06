@@ -9,7 +9,7 @@ using System.Web;
 public class FetchRecordService
 {
     private const String INSERT_FETCHRECORDS_SQL = "insert into fetch_medicine(fetch_num,fetch_person,med_name,patient_name,amount,patient_num,med_num) values(\"{0}\",\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\",\"{6}\")";
-    private const String QUERY_FETCHRECORDS_SQL = "select * from fetch_medicine where fetch_num=\"{0}\" ";
+    private const String QUERY_FETCHRECORDS_SQL = "select * from fetch_medicine where patient_num=\"{0}\" ";
     private const String UPDATE_MEDICINE_AMOUNT_SQL = "update medicine set amount={0} where m_num=\"{1}\" ";
     //插入取药记录
     public static int AddFetchRecords(String fetchNum, String fetchPerson, String medName,String patientName,int amount,String patientNum,String medNum)
@@ -27,9 +27,9 @@ public class FetchRecordService
       
     }
     //查询取药记录
-    public static List<FetchRecords> QueryFetchByNum(String recordsNum)
+    public static List<FetchRecords> QueryFetchByNum(String patientNum)
     {
-        List<Dictionary<String, Object>> sqlResult = DatabaseTool.ExecSqlReturn(String.Format(QUERY_FETCHRECORDS_SQL, recordsNum));
+        List<Dictionary<String, Object>> sqlResult = DatabaseTool.ExecSqlReturn(String.Format(QUERY_FETCHRECORDS_SQL, patientNum));
         List<FetchRecords> fetchRecords = new List<FetchRecords>();
         if (sqlResult == null || sqlResult.Count < 1) //如果结果为空，返回空对象
         {
