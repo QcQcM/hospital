@@ -43,9 +43,15 @@ public partial class doctorMedicine : System.Web.UI.Page
             }
             else
             {
-                OrderService.AddOrder(patient_num[i], examination_num[i], int.Parse(examination[i]), doctor[i], order[i], j, time[i]);
-
-            }
+                if (examination[i].Equals("") || doctor[i].Equals("") || order[i].Equals("") || time[i].Equals("") || examination_num.Equals(""))
+                {
+                    Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorMedicine.aspx');</script>");
+                }
+                else
+                {
+                    OrderService.AddOrder(patient_num[i], examination_num[i], int.Parse(examination[i]), doctor[i], order[i], j, time[i]);
+                }
+                }
         }
 
         //清空数据

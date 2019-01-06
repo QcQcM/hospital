@@ -40,13 +40,20 @@ public partial class fetchMedicine : System.Web.UI.Page
             }
             else
             {
-                if(FetchRecordService.AddFetchRecords(patient_num[i], examination_num[i], examination[i], doctor[i], int.Parse(order[i]), time[i], medNum[i])<0)
+                if (examination[i].Equals("") || doctor[i].Equals("") || order[i].Equals("") || time[i].Equals("") || examination_num.Equals(""))
                 {
-                    Response.Write("<script language=javascript>window.alert('药品库存小于取药数量！取药失败');</script>");
+                    Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('fetchMedicine.aspx');</script>");
                 }
                 else
                 {
-                    Response.Write("<script language=javascript>window.alert('添加取药记录成功');</script>");
+                    if (FetchRecordService.AddFetchRecords(patient_num[i], examination_num[i], examination[i], doctor[i], int.Parse(order[i]), time[i], medNum[i]) < 0)
+                    {
+                        Response.Write("<script language=javascript>window.alert('药品库存小于取药数量！取药失败');</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>window.alert('添加取药记录成功');</script>");
+                    }
                 }
             }
         }

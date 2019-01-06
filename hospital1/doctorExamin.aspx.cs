@@ -31,15 +31,22 @@ public partial class doctorExamin : System.Web.UI.Page
             string[] order = new string[] { order1.Text, order2.Text, order3.Text, order4.Text, order5.Text, order6.Text, order7.Text, order8.Text, order9.Text, order10.Text };
             string[] time = new string[] { time1.Text, time2.Text, time3.Text, time4.Text, time5.Text, time6.Text, time7.Text, time8.Text, time9.Text, time10.Text };
 
-            for (i = 0; i < 10; i++)
+        for (i = 0; i < 10; i++)
+        {
+            if (patient_num[i] == "")
             {
-                if (patient_num[i] == "")
+                break;
+            }
+            else
+            {
+                if (examination[i].Equals("") || doctor[i].Equals("") || order[i].Equals("") || time[i].Equals("") || examination_num.Equals(""))
                 {
-                    break;
+                    Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorExamination.aspx');</script>");
                 }
                 else
                 {
-                     OrderService.AddOrder(patient_num[i], examination_num[i], doctor[i], order[i], j, time[i], examination[i]);
+                    OrderService.AddOrder(patient_num[i], examination_num[i], doctor[i], order[i], j, time[i], examination[i]);
+                }
                  }
             }
 
