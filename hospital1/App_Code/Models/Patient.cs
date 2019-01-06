@@ -61,7 +61,7 @@ using System.Web;
             patient.WorkingPlace = (String)dic["workingplace"];
             patient.WorkingTel = (String)dic["workingtel"];
             patient.Diagonse = (String)dic["diagnose"];
-            patient.Condition = (int)dic["condition"];
+            patient.Condition = (int)dic["conditions"];
             return patient;
         }
     }

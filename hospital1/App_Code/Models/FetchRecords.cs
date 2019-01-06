@@ -25,7 +25,6 @@ public class FetchRecords
         fetchRecords.PatientName= (String)dic["patient_name"];
         fetchRecords.Amount = (int)dic["amount"];
         fetchRecords.PatientNum = (String)dic["patient_num"];
-        fetchRecords.MedcineNum = (String)dic["med_num"];
         return fetchRecords;
     }
 }

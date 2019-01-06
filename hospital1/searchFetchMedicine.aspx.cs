@@ -75,6 +75,14 @@ public partial class searchFetchMedicine : System.Web.UI.Page
     {
         List<FetchRecords> fetchRecords = new List<FetchRecords>();
         fetchRecords = FetchRecordService.QueryFetchByNum(patientId.Text);
-        addFetchRecords(fetchRecords);
+        if(fetchRecords.Count == 0)
+        {
+            Response.Write("<script language=javascript>window.alert('无此病人信息，请重新输入编号！');</script>");
+        }
+        else
+        {
+            addFetchRecords(fetchRecords);
+        }
+       
     }
 }
