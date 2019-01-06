@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /hospital1/packages.config
+/hospital1/App_Code/Services/publicService.cs
