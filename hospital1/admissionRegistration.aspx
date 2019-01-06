@@ -284,7 +284,7 @@
                 <div class="title">
                      <asp:Label ID="session" runat="server"></asp:Label>
                </div>
-                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
+                <asp:ImageButton CausesValidation = "false" runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -319,7 +319,7 @@
                                     <label for="name" style="width: 85px;" class=" col-form-label">姓名</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="name" runat="server" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="Re1" ControlToValidate ="name"  runat ="server" ErrorMessage="必须填写姓名" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="Re1" ControlToValidate ="name"  runat ="server" ErrorMessage="必须填写姓名" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
                                    <div class="form-group row">
@@ -330,7 +330,7 @@
                                             <asp:ListItem>女</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
-                                       <asp:RequiredFieldValidator ID="Re5" ControlToValidate ="sex"  runat ="server" ErrorMessage="必须填写性别" Display ="Dynamic" ForeColor="Red"/>
+                                       <asp:RequiredFieldValidator ID="Re5" ControlToValidate ="sex"  runat ="server" ErrorMessage="必须填写性别" Font-Bold ="true" Display ="None"/>
                                 </div>
                                 <div class="form-group row">
                                     <label for="job" style="width: 85px;" class=" col-form-label">职业</label>
@@ -349,22 +349,20 @@
                                     <div class="col-9">
                                         <asp:TextBox ID="Tel" runat="server"  CssClass="form-control"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="Tel"  runat ="server" ErrorMessage="必须填写手机号" Font-Bold ="true" Display ="None"/>
-                                        <asp:RegularExpressionValidator  ID="TelValidator1" runat="server"  ControlToValidate="Tel" Display="Dynamic" ValidationExpression="/^1[34578]\d{9}$/" ErrorMessage="手机号格式不正确" ForeColor="Red"></asp:RegularExpressionValidator>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="id" style="width: 85px;" class=" col-form-label">身份证号</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="idNum" runat="server"  CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="Req2" ControlToValidate ="idNum"  runat ="server" ErrorMessage="必须填写身份证号"  Display ="Dynamic" ForeColor="Red"/>
-                                           <asp:RegularExpressionValidator  ID="RegularExpressionValidator1" runat="server"  ControlToValidate="idNum" Display="Dynamic" ValidationExpression="/^1[34578]\d{9}$/" ErrorMessage="请输入格式正确的身份证号" ForeColor="Red"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator ID="Req2" ControlToValidate ="idNum"  runat ="server" ErrorMessage="必须填写身份证号" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
                                  <div class="form-group row">
                                     <label for="age" style="width: 85px;" class=" col-form-label">年龄</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="Age" runat="server"  CssClass="form-control"></asp:TextBox>
-                                       <asp:RangeValidator ID="rev2" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="Age" MaximumValue ="120" MinimumValue ="1" />
+                                       <asp:RangeValidator ID="rev2" runat ="server" Display ="None" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="Age" MaximumValue ="120" MinimumValue ="1" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -380,7 +378,7 @@
                                             <asp:ListItem>已婚</asp:ListItem>
                                             <asp:ListItem>未婚</asp:ListItem>
                                         </asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="Re4" ControlToValidate ="MarriageList"  runat ="server" ErrorMessage="必须填写婚姻状况" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="Re4" ControlToValidate ="MarriageList"  runat ="server" ErrorMessage="必须填写婚姻状况" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>   
                             </div>
@@ -391,13 +389,13 @@
                                         <asp:DropDownList ID="NativeProvinceList" runat="server"  style="width: 74px" >
                                         </asp:DropDownList>
                                         <label for="sheng" style="width: 20px;">省</label>
-                                        <asp:RequiredFieldValidator ID="Rev5" ControlToValidate ="NativeProvinceList"  runat ="server" ErrorMessage="必须填写籍贯" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="Rev5" ControlToValidate ="NativeProvinceList"  runat ="server" ErrorMessage="必须填写籍贯" Font-Bold ="true" Display ="None"/>
 
                                         <asp:DropDownList ID="NativeCityList" runat="server" >
                                         </asp:DropDownList>
 
                                         <label for="shi" style="width: 20px;">市</label>
-                                        <asp:RequiredFieldValidator ID="Re6" ControlToValidate ="NativeCityList"  runat ="server" ErrorMessage="必须填写籍贯" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="Re6" ControlToValidate ="NativeCityList"  runat ="server" ErrorMessage="必须填写籍贯" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
                                  <div class="form-group row">
@@ -425,7 +423,7 @@
                                     <label for="example-month-input" style="width: 85px;" class=" col-form-label">现住址</label>
                                     <div class="col-9">
                                       <asp:TextBox ID="livingAddress" runat="server" TextMode="MultiLine" Width="350px" CssClass="form-control"></asp:TextBox>
-                                      <asp:RequiredFieldValidator ID="Re9" ControlToValidate ="livingAddress"  runat ="server" ErrorMessage="必须填写现住址" Display ="Dynamic" ForeColor="Red"/>
+                                      <asp:RequiredFieldValidator ID="Re9" ControlToValidate ="livingAddress"  runat ="server" ErrorMessage="必须填写现住址" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>  
                                 <div class="form-group row">
@@ -444,7 +442,7 @@
                                     <label for="example-month-input" style="width: 85px;" class=" col-form-label"  >编号</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="patientNum" runat="server" Width="350px" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="Re10" ControlToValidate ="patientNum"  runat ="server" ErrorMessage="必须填写病人编号" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="Re10" ControlToValidate ="patientNum"  runat ="server" ErrorMessage="必须填写编号" Font-Bold ="true" Display ="None"/>
                                 </div>
                             </div>
                         </div>
@@ -455,58 +453,73 @@
                         <div class="card-header">
                             <h3>入院信息</h3>
                         </div> 
-                             
-                                <div class="form-group row" style="margin-top:80px">
+                          <br />
+                          <div class="row" style="padding-left:20px">
+                            <div class="col-md-6">
+                                 <div class="form-group row">
+                                    <label for="example-datetime-local-input" style="width: 250px;" class=" col-form-label">入院日期</label>
+                                    <div class="col-9">
+                                        <asp:TextBox ID="adimissionDate" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-datetime-local-input" style="width: 250px;" class=" col-form-label">出院日期</label>
+                                    <div class="col-9">
+                                        <asp:TextBox ID="departDate" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="example-datetime-local-input" style="width: 250px;" class=" col-form-label">主治医师</label>
                                     <div class="col-9">
-                                        <asp:DropDownList ID="physician" runat="server"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="physician"  runat ="server" ErrorMessage="必须填写主治医师" Display ="Dynamic" ForeColor="Red"/>
+                                       <asp:TextBox ID="physician" runat="server" CssClass="form-control" ></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="physician"  runat ="server" ErrorMessage="必须填写主治医师" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>                                
                                 <div class="form-group row">
                                     <label for="example-color-input" style="width: 250px;" class=" col-form-label">过往病史</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="illHistory" runat="server"  CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="illHistory"  runat ="server" ErrorMessage="必须填写过往病史" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="illHistory"  runat ="server" ErrorMessage="必须填写过往病史" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-color-input" style="width: 250px;" class=" col-form-label">入院诊断</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="diagnosis" runat="server" CssClass="form-control" ></asp:TextBox>
-                                         <asp:RequiredFieldValidator ID="Req4" ControlToValidate ="diagnosis"  runat ="server" ErrorMessage="必须填写入院诊断" Display ="Dynamic" ForeColor="Red"/>
+                                         <asp:RequiredFieldValidator ID="Req4" ControlToValidate ="diagnosis"  runat ="server" ErrorMessage="必须填写入院诊断" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
 
                             </div>
-                             <div class="form-group row" style="margin-top:80px;margin-left:15px">
+                            <div class="col-md-6">
+                                <div class="form-group row">
                                     <label for="example-search-input" style="width: 250px;" class=" col-form-label">入院科室</label>
                                     <div class="col-9">
                                         <asp:DropDownList ID="department" runat="server" border-color="white">
                                         </asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="department"  runat ="server" ErrorMessage="必须选择入院科室" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="department"  runat ="server" ErrorMessage="必须选择入院科室" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
                                 
-                                <div class="form-group row" style="margin-left:15px">
+                                <div class="form-group row">
                                     <label for="example-datetime-local-input" style="width: 250px;" class=" col-form-label">病房号</label>
                                     <div class="col-9">
-                                        <asp:DropDownList ID="roomNumber" runat="server"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate ="roomNumber"  runat ="server" ErrorMessage="必须填写病房号" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:TextBox ID="roomNumber" runat="server" CssClass="form-control" ></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate ="roomNumber"  runat ="server" ErrorMessage="必须填写病房号" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
-                                <div class="form-group row" style="margin-left:15px">
+                                <div class="form-group row">
                                     <label for="example-datetime-local-input"style="width: 250px;" class=" col-form-label">病床号</label>
                                     <div class="col-9">
-                                       <asp:DropDownList ID="bedNumber" runat="server"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate ="bedNumber"  runat ="server" ErrorMessage="必须填写病床号" Display ="Dynamic" ForeColor="Red"/>
+                                       <asp:TextBox ID="bedNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate ="bedNumber"  runat ="server" ErrorMessage="必须填写病床号" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>
-                                <div class="form-group row" style="margin-left:15px">
+                                <div class="form-group row">
                                     <label for="example-color-input" style="width: 250px;" class=" col-form-label">药物过敏情况</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="allergicCondition" runat="server"  TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ControlToValidate ="allergicCondition"  runat ="server" ErrorMessage="必须填写药物过敏情况" Display ="Dynamic" ForeColor="Red"/>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ControlToValidate ="allergicCondition"  runat ="server" ErrorMessage="必须填写药物过敏情况" Font-Bold ="true" Display ="None"/>
                                     </div>
                                 </div>              
                             </div>
@@ -514,8 +527,8 @@
                      </div> 
                     
                         <div style="position:relative;padding-left:600px">
-                         <asp:Button runat="server" ID="ok" Text="确认登记" class="btn btn-primary" OnClick="ok_Click"  />
-                            
+                         <asp:Button runat="server" ID="ok" Text="确认登记" class="btn btn-primary" OnClick="ok_Click" />
+                            <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/> 
                             &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
