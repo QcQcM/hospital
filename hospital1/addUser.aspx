@@ -331,18 +331,23 @@
                                 <div class="col-md-6" style="margin-left:170px">
                                     <div class="form-group">
                                         <label>编号</label>
-                                        <asp:TextBox ID="user_num" runat ="server" class="form-control"></asp:TextBox>   
+                                        <asp:TextBox ID="user_num" runat ="server" class="form-control"></asp:TextBox>  
+                         <asp:RequiredFieldValidator ID="rev1" ControlToValidate ="user_num"  runat ="server" ErrorMessage="必须填写编号" Display ="Dynamic" ForeColor="Red"/>
+                                         
                                     </div>
                                    
 
                                     <div class="form-group">
                                         <label>姓名</label>
-                                        <asp:TextBox ID="user_name" runat ="server" class="form-control"></asp:TextBox>   
+                                        <asp:TextBox ID="user_name" runat ="server" class="form-control"></asp:TextBox>  
+                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="user_name"  runat ="server" ErrorMessage="必须填写姓名" Display ="Dynamic" ForeColor="Red"/>  
                                     </div>
 
                                     <div class="form-group">
                                         <label>密码</label>
                                         <asp:TextBox ID="user_password" runat ="server" class="form-control"></asp:TextBox>                                           
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="user_password"  runat ="server" ErrorMessage="必须填写密码" Display ="Dynamic" ForeColor="Red"/>
+                                         
                                     </div>
 
                                     <div class="form-group">
@@ -350,7 +355,9 @@
                                         <asp:DropDownList ID="user_type" runat="server" class="form-control">
                                         <asp:ListItem Text="医生" Value ="doctor" Selected ="True" ></asp:ListItem>
                                         <asp:ListItem Text="护士" Value="nurse"></asp:ListItem>
-                                        </asp:DropDownList>                                          
+                                        </asp:DropDownList>   
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate ="user_type"  runat ="server" ErrorMessage="必须填写用户类型" Display ="Dynamic" ForeColor="Red"/> 
+                                                                               
                                     </div>
 
                                     <div class="form-group">
@@ -359,38 +366,38 @@
                                         <asp:ListItem Text="男" Value="male" Selected ="True" ></asp:ListItem>
                                         <asp:ListItem Text ="女" Value="female"></asp:ListItem>
                                         </asp:DropDownList>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="user_sex"  runat ="server" ErrorMessage="必须填写性别" Display ="Dynamic" ForeColor="Red"/>  
+
                                     </div>
 
                                     <div class="form-group">
                                         <label>联系方式</label>
                                         <asp:TextBox ID="user_phone" runat ="server" class="form-control"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate ="user_phone"  runat ="server" ErrorMessage="必须填写联系方式" Display ="Dynamic" ForeColor="Red"/>  
+                                    
                                     </div> 
 
                                     <div class="form-group">
                                         <label>年龄</label>
                                         <asp:TextBox ID="user_age" runat ="server" class="form-control"></asp:TextBox>
-                                    </div>  
+                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="user_age"  runat ="server" ErrorMessage="必须填写年龄" Display ="Dynamic" ForeColor="Red"/>
+                       <asp:RangeValidator ID="rev2" runat ="server"Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" />
+                                          </div>  
                                     <div class="form-group">
                                         <label>所属科室</label>
                                         <asp:DropDownList ID="user_department" runat="server" class="form-control">
                                         
                                         </asp:DropDownList>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="user_department"  runat ="server" ErrorMessage="必须填写所属科室" Display ="Dynamic" ForeColor="Red"/>
+
                                      </div>
                               </div>   
                            </div>  
                           <div style ="margin-left:270px">      
                             <asp:Button ID="user_add" runat="server" Text="添加" class="btn btn-primary" OnClick="user_add_Click"/>  
                           </div>    
-                         <asp:RequiredFieldValidator ID="rev1" ControlToValidate ="user_num"  runat ="server" ErrorMessage="必须填写编号" Font-Bold ="true" Display ="None"/>
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="user_name"  runat ="server" ErrorMessage="必须填写姓名" Font-Bold ="true" Display ="None"/> 
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="user_password"  runat ="server" ErrorMessage="必须填写密码" Font-Bold ="true" Display ="None"/>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate ="user_type"  runat ="server" ErrorMessage="必须填写用户类型" Font-Bold ="true" Display ="None"/> 
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate ="user_phone"  runat ="server" ErrorMessage="必须填写联系方式" Font-Bold ="true" Display ="None"/>  
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="user_sex"  runat ="server" ErrorMessage="必须填写性别" Font-Bold ="true" Display ="None"/>  
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="user_department"  runat ="server" ErrorMessage="必须填写所属科室" Font-Bold ="true" Display ="None"/>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="user_age"  runat ="server" ErrorMessage="必须填写年龄" Font-Bold ="true" Display ="None"/>
-                       <asp:RangeValidator ID="rev2" runat ="server" Display ="None" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" />
-                          <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/> 
+                        
+                       
                     </div>
   </div>
   </div>

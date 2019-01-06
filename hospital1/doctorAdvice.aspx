@@ -317,14 +317,14 @@
                                     <label for="example-text-input" style="width: 85px;margin-left:10px" class=" col-form-label" >医生编号</label>
                                     <div class="col-9">
                                         <asp:TextBox runat="server" ID="doctor_num" class="form-control" />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="doctor_num"  runat ="server" ErrorMessage="必须填写医生编号" Font-Bold ="true" Display ="None"/> 
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="doctor_num"  runat ="server" ErrorMessage="必须填写医生编号" Display ="Dynamic" ForeColor="Red"/> 
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-search-input" style="width: 85px;margin-left:10px" class=" col-form-label">病人编号</label>
                                     <div class="col-9">
                                         <asp:TextBox runat="server" ID="patient_num" class="form-control" />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="patient_num"  runat ="server" ErrorMessage="必须填写病人编号" Font-Bold ="true" Display ="None"/> 
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="patient_num"  runat ="server" ErrorMessage="必须填写病人编号" Display ="Dynamic" ForeColor="Red"/> 
                                     </div>
                                 </div>
                                 
@@ -335,7 +335,7 @@
                                     <label for="example-date-input" style="width: 85px;margin-left:10px" class=" col-form-label">医生姓名</label>
                                     <div class="col-9">
                                         <asp:TextBox runat="server" ID="doctor_name" class="form-control" />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="doctor_name"  runat ="server" ErrorMessage="必须填写医生姓名" Font-Bold ="true" Display ="None"/> 
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="doctor_name"  runat ="server" ErrorMessage="必须填写医生姓名" Display ="Dynamic" ForeColor="Red"/> 
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -345,7 +345,7 @@
                                             <asp:ListItem Text="出院医嘱"></asp:ListItem>
                                             <asp:ListItem Text="治疗医嘱"></asp:ListItem>
                                         </asp:DropDownList>
-                                          <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="type"  runat ="server" ErrorMessage="必须选择遗嘱类型" Font-Bold ="true" Display ="None"/> 
+                                          <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="type"  runat ="server" ErrorMessage="必须选择遗嘱类型" Display ="Dynamic" ForeColor="Red"/> 
                                           </div>
                                     </div>
                             </div>
@@ -356,12 +356,12 @@
                                 <label for="inputHorizontalSuccess" class="col-sm-2 col-form-label">医嘱</label>
                                 <div class="col-sm-10" style ="margin-left:80px ">
                                     <asp:TextBox runat="server" ID="content" TextMode="MultiLine" Rows="5" class="form-control" Multiline="True"/>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="content"  runat ="server" ErrorMessage="必须填写医嘱" Font-Bold ="true" Display ="None"/> 
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate ="content"  runat ="server" ErrorMessage="必须填写医嘱" Display ="Dynamic" ForeColor="Red"/> 
                                 </div>
                             </div>
                             <div style ="margin-left :300px">
                             <asp:Button  ID="ok" runat="server" Text="确定" style="margin-left:10px" class="btn btn-primary" OnClick="ok_Click" />
-                             <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/> 
+                            
                             </div>
                                 
 

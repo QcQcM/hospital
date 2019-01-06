@@ -307,47 +307,46 @@
                                     <label for="example-text-input" style="width: 85px;" class=" col-form-label">药品编号</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="drug_num" runat="server" class="form-control"/>
-                                        <asp:RequiredFieldValidator ID="rev1" ControlToValidate ="drug_num"  runat ="server" ErrorMessage="必须填写药品编号" Font-Bold ="true" Display ="None"/>
+                                        <asp:RequiredFieldValidator ID="rev1" ControlToValidate ="drug_num"  runat ="server" ErrorMessage="必须填写药品编号" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-search-input" style="width: 85px;" class=" col-form-label">药品名称</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="drug_name" runat="server" class="form-control"/>
-                                         <asp:RequiredFieldValidator ID="Re1" ControlToValidate ="drug_name"  runat ="server" ErrorMessage="必须填写药品名称" Font-Bold ="true" Display ="None"/>
+                                         <asp:RequiredFieldValidator ID="Re1" ControlToValidate ="drug_name"  runat ="server" ErrorMessage="必须填写药品名称" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-email-input" style="width: 85px;" class=" col-form-label">厂家编号</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="manufacturer" runat="server" class="form-control"/>
-                                         <asp:RequiredFieldValidator ID="Re2" ControlToValidate ="manufacturer"  runat ="server" ErrorMessage="必须填写厂家编号" Font-Bold ="true" Display ="None"/>
+                                         <asp:RequiredFieldValidator ID="Re2" ControlToValidate ="manufacturer"  runat ="server" ErrorMessage="必须填写厂家编号" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-url-input" style="width: 85px;" class=" col-form-label">单价</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="price" runat="server" class="form-control"/>
-                                         <asp:RequiredFieldValidator ID="Re3" ControlToValidate ="price"  runat ="server" ErrorMessage="必须填写药品单价" Font-Bold ="true" Display ="None"/>
+                                         <asp:RequiredFieldValidator ID="Re3" ControlToValidate ="price"  runat ="server" ErrorMessage="必须填写药品单价" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-tel-input" style="width: 85px;" class=" col-form-label">数量</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="amount" runat="server" class="form-control"/>
-                                         <asp:RequiredFieldValidator ID="Re4" ControlToValidate ="amount"  runat ="server" ErrorMessage="必须填写药品数量" Font-Bold ="true" Display ="None"/>
+                                         <asp:RequiredFieldValidator ID="Re4" ControlToValidate ="amount"  runat ="server" ErrorMessage="必须填写药品数量" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-password-input" style="width: 85px;" class=" col-form-label">适用症</label>
                                     <div class="col-9">
                                         <asp:TextBox ID ="type" runat="server" class="form-control"/>
-                                         <asp:RequiredFieldValidator ID="Re5" ControlToValidate ="type"  runat ="server" ErrorMessage="必须填写适应症" Font-Bold ="true" Display ="None"/>
+                                         <asp:RequiredFieldValidator ID="Re5" ControlToValidate ="type"  runat ="server" ErrorMessage="必须填写适应症" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div style ="padding-left :420px">
                                     <asp:Button ID="Add" runat ="server" class="btn btn-primary" Text ="添加" OnClick="Add_Click" />
-                                    <asp:ValidationSummary ID ="ValidationSummary1" runat ="server" HeaderText ="出错信息：" ShowMessageBox ="true" ShowSummary ="false"  Display="None"/>
                                     </div>
                             </div>
                         </div> 
