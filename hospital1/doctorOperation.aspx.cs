@@ -23,7 +23,7 @@ public partial class doctorOperation : System.Web.UI.Page
 
     protected void ok_Click(object sender, EventArgs e)
     {
-        int i;
+        int i,k;
         int j = 2;//药品是1 手术是2 检查是3
         string[] patient_num = new string[] { patient_num1.Text, patient_num2.Text, patient_num3.Text, patient_num4.Text, patient_num5.Text, patient_num6.Text, patient_num7.Text, patient_num8.Text, patient_num9.Text, patient_num10.Text };
         string[] examination = new string[] { examination1.Text, examination2.Text, examination3.Text, examination4.Text, examination5.Text, examination6.Text, examination7.Text, examination8.Text, examination9.Text, examination10.Text };
@@ -38,14 +38,22 @@ public partial class doctorOperation : System.Web.UI.Page
             {
                 break;
             }
+            
+        }
+        for (k = 0; k < i; k++)
+        {
+            if (patient_num[k].Equals("") || examination[k].Equals("") || examination_num[k].Equals("") || doctor[k].Equals("") || order[k].Equals("") || time[k].Equals(""))
+            {
+                Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorOperation.aspx');</script>");
+            }
             else
             {
                 OrderService.AddOrder(patient_num[i], examination_num[i], doctor[i], order[i], j, time[i], examination[i]);
             }
         }
 
-        //清空数据
-        patient_num1.Text = ""; patient_num2.Text = ""; patient_num3.Text = ""; patient_num4.Text = ""; patient_num5.Text = ""; patient_num6.Text = ""; patient_num7.Text = ""; patient_num8.Text = ""; patient_num9.Text = ""; patient_num10.Text = "";
+            //清空数据
+            patient_num1.Text = ""; patient_num2.Text = ""; patient_num3.Text = ""; patient_num4.Text = ""; patient_num5.Text = ""; patient_num6.Text = ""; patient_num7.Text = ""; patient_num8.Text = ""; patient_num9.Text = ""; patient_num10.Text = "";
         examination1.Text = ""; examination2.Text = ""; examination3.Text = ""; examination4.Text = ""; examination5.Text = ""; examination6.Text = ""; examination7.Text = ""; examination8.Text = ""; examination9.Text = ""; examination10.Text = "";
         examination_num1.Text = ""; examination_num2.Text = ""; examination_num3.Text = ""; examination_num4.Text = ""; examination_num5.Text = ""; examination_num6.Text = ""; examination_num7.Text = ""; examination_num8.Text = ""; examination_num9.Text = ""; examination_num10.Text = "";
         doctor1.Text = ""; doctor2.Text = ""; doctor3.Text = ""; doctor4.Text = ""; doctor5.Text = ""; doctor6.Text = ""; doctor7.Text = ""; doctor8.Text = ""; doctor9.Text = ""; doctor10.Text = "";
