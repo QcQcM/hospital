@@ -26,10 +26,10 @@ public partial class searchPatientInformation : System.Web.UI.Page
     {
         List<Patient> patient = new List<Patient>();
         patient=PatientService.GetPatientsById(Request["number"].ToString());
-        
-        if (patient.Count() == 0)
+        if (patient.Count == 0)
         {
-            Response.Write("<script language=javascript>window.alert('无此病人信息，请重新输入');");
+            System.Diagnostics.Debug.Write("进入判断\n");
+            Response.Write("<script language=javascript>window.alert('无此病人信息，请重新输入编号！');</script>");
         }
         else
         {

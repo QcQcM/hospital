@@ -406,8 +406,8 @@
                                            </tr>
                                         
                                     </table>
-                                    <br/>
-                                    <div style ="margin-left :350px;margin-bottom :2cm">
+                                    
+                                    <div class="text-right" style ="margin-left :300px">
                                         
                                     
                                         <asp:Button ID ="ok" runat ="server" Text ="确定" class="btn btn-outline-primary" OnClick="ok_Click"/>

@@ -51,8 +51,25 @@ public partial class admissionRegistration : System.Web.UI.Page
         department.DataSource = dt;
         department.DataTextField = "d_name";
         department.DataBind();
-        
-        
+
+        //为主治医师编号下拉框绑定数据源
+        dt = DatabaseTool.ExecSqlReturnTable("select * from users where type=3");
+        physician.DataSource = dt;
+        physician.DataTextField = "u_num";
+        physician.DataBind();
+
+        //为病房添加下拉框绑定数据源
+        dt = DatabaseTool.ExecSqlReturnTable("select * from room");
+        roomNumber.DataSource = dt;
+        roomNumber.DataTextField = "r_num";
+        roomNumber.DataBind();
+
+        //为病床添加下拉框绑定数据源，必须是可用的病床
+        dt = DatabaseTool.ExecSqlReturnTable("select * from bed where isavailable=1");
+        bedNumber.DataSource = dt;
+        bedNumber.DataTextField = "b_num";
+        bedNumber.DataBind();
+
     }
     protected void sign_up_Click(object sender, EventArgs e)
     {
@@ -75,6 +92,20 @@ public partial class admissionRegistration : System.Web.UI.Page
 
     protected void ok_Click(object sender, EventArgs e)
     {
+        //判断输入的病人名字是否有数字、字母或非法字符
+        String name = this.name.Text;
+        if (publicService.isContainNumberOrSpecialCharOrEnglish(name) == true)
+        {
+            Response.Write("<script language=javascript>window.alert('病人姓名中含有数字或字母或非法字符！');</script>");
+            return;
+        }
+        //判断输入的职业是否有数字或非法字符
+        String occupation = this.job.Text;
+        if (publicService.isContainNumberOrSpecialChar(occupation)&&occupation.Equals("")==false)
+        {
+            Response.Write("<script language=javascript>window.alert('所填的职业中含有数字或非法字符！');</script>");
+            return;
+        }
         Patient patient = new Patient();
         patient.Id = this.patientNum.Text;
         patient.Name = this.name.Text;
@@ -87,7 +118,8 @@ public partial class admissionRegistration : System.Web.UI.Page
         patient.RoomNum = roomNumber.Text;
         patient.BedNum = bedNumber.Text;
         patient.PhysicanNum = physician.Text;
-        patient.AdmissionTime = adimissionDate.Text;
+        //入院日期改为系统获得，可以将显示界面的那两个时间输入框删除了
+        patient.AdmissionTime = System.DateTime.Now.ToString();
         patient.IDNum = idNum.Text;
         patient.BirthDate = birthDate.Text;
         patient.Nation = nation.Text;
