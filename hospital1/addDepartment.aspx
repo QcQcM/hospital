@@ -283,7 +283,7 @@
                  <div class="title">
                      <asp:label id="session" runat="server"></asp:label>
                </div>
-                <asp:imagebutton runat="server" id="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
+                <asp:imagebutton CausesValidation = "false" runat="server" id="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -345,7 +345,7 @@
                                 </div>
                              </div>   
                                 <div style ="margin-left:90px">      
-                            <asp:Button ID="Button1" runat="server" Text="添加" class="btn btn-primary" OnClick="Button1_Click1"/> 
+                            <asp:Button ID="Button1" runat="server" Text="添加" class="btn btn-primary"  OnClick="Button1_Click1"/> 
                             
                             </div>    
                               <asp:RequiredFieldValidator ID ="RequiredFieldValidator1" runat ="server" ErrorMessage="必须填写科室名" Font-Bold ="true" ControlToValidate ="text1" Display ="None" ></asp:RequiredFieldValidator>

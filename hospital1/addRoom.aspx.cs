@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,6 +16,10 @@ public partial class Views_addRoom : System.Web.UI.Page
         }
         System.Diagnostics.Debug.Write(Session["number"]);
         session.Text = Session["number"].ToString();
+        DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from department");
+        room_department.DataSource = dt;
+        room_department.DataTextField = "d_name";
+        room_department.DataBind();
     }
 
     protected void add_Room_Click(object sender, EventArgs e)
