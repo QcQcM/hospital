@@ -40,8 +40,15 @@ public partial class doctorOperation : System.Web.UI.Page
             }
             else
             {
-                OrderService.AddOrder(patient_num[i], examination_num[i], doctor[i], order[i], j, time[i], examination[i]);
-            }
+                if (examination[i].Equals("") || doctor[i].Equals("") || order[i].Equals("") || time[i].Equals("") || examination_num.Equals(""))
+                {
+                    Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorOperation.aspx');</script>");
+                }
+                else
+                {
+                    OrderService.AddOrder(patient_num[i], examination_num[i], doctor[i], order[i], j, time[i], examination[i]);
+                }
+                }
         }
 
         //清空数据
