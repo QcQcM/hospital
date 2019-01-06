@@ -284,7 +284,7 @@
                 <div class="title">
                      <asp:Label ID="session" runat="server"></asp:Label>
                </div>
-                <asp:ImageButton runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
+                <asp:ImageButton CausesValidation = "false" runat="server" ID="sign_up" style="background-image:url(./img/logout/zhuxiao.png);margin-left:20px;margin-bottom:7px" OnClick="sign_up_Click" />
             </div>
             <hr>
             <!-- Sidebar Navidation Menus-->
@@ -343,7 +343,9 @@
                                      
                                      <div class="form-group">
                                         <label>所属科室</label>
-                                        <asp:TextBox ID="room_department" runat ="server" class="form-control"></asp:TextBox>
+                                        <asp:DropDownList ID="room_department" runat="server" class="form-control">
+                                        
+                                        </asp:DropDownList>
                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="room_department"  runat ="server" ErrorMessage="必须填写病房所属部门" Font-Bold ="true" Display ="None"/>
                                     </div> 
                                     <div style ="margin-left:200px">      
