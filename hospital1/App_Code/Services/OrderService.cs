@@ -18,12 +18,40 @@ public class OrderService
     //重载函数
     //函数一用于插入检查订单或者手术订单
     //函数一需要传入 患者编号、手术或者检查的编号、医生的编号、订单编号、类型（用于区分三类操作：药品是1 手术是2 检查是3）、使用的时间
-    public static int AddOrder(String patientNum, String useNum, String doctorNum, String orderNum, int type, String use_time, String useName)
+    public static List<Order> QueryOrderByNum(String orderNum)
     {
-        if (DatabaseTool.ExeclSqlReturnItem(string.Format(SELECT_ORDER_SQL, orderNum), "patient_num").ToString().Equals("-1") == false)
+        List<Dictionary<String, Object>> sqlResult = DatabaseTool.ExecSqlReturn(String.Format(SELECT_ORDER_SQL, orderNum));
+        List<Order> order = new List<Order>();
+        if (sqlResult == null || sqlResult.Count < 1) //如果结果为空，返回空对象
+        {
+            return order;
+        }
+        else
+        {
+            foreach (Dictionary<String, Object> dic in sqlResult) //遍历结果集，每一条都加入list
+            {
+                order.Add(Order.CreateOrder(dic));
+            }
+        }
+        return order;
+    }
+    //判断订单编号是否已经存在在数据库里
+    public static int JudgeOrderDuplicate(String orderNum)
+    {
+        List<Order> orders = new List<Order>();
+        orders = OrderService.QueryOrderByNum(orderNum);
+        if(orders.Count == 0)
+        {
+            return 0;
+        }
+        else
         {
             return -1;
         }
+    }
+    public static int AddOrder(String patientNum, String useNum, String doctorNum, String orderNum, int type, String use_time, String useName)
+    {
+        
         Decimal price;
         if (type == 2)
         {
@@ -51,10 +79,7 @@ public class OrderService
     //函数二需要传入 患者编号、药品编号、数量、医生的编号、订单编号、类型（用于区分三类操作：药品是1 手术是2 检查是3）
     public static int AddOrder(String patientNum,String useNum,int amount,String doctorNum,String orderNum,int type,String useName)
     {
-        if (DatabaseTool.ExeclSqlReturnItem(string.Format(SELECT_ORDER_SQL, orderNum), "patient_num").ToString().Equals("-1") == false)
-        {
-            return -1;
-        }
+      
         Decimal price = (Decimal)DatabaseTool.ExeclSqlReturnItem(String.Format(SELECT_MEDICINE_PRICE_BYID, useNum), "price");
         price *= amount;
         if (DatabaseTool.ExecSql(String.Format(INSERT_ORDER_SQL, patientNum, useNum, amount,doctorNum, orderNum, type,System.DateTime.Now.ToString(),"",price,useName)))

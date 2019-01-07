@@ -44,4 +44,17 @@ public class FetchRecordService
         }
         return fetchRecords;
     }
+    public static int JudgeFetchDuplicate(String fetchNum)
+    {
+        List<FetchRecords> fetchRecords = new List<FetchRecords>();
+        fetchRecords = FetchRecordService.QueryFetchByNum(fetchNum);
+        if (fetchRecords.Count == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
+    }
 }
