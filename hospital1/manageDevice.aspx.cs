@@ -22,22 +22,35 @@ public partial class manageDevice : System.Web.UI.Page
     }
     protected void Search_Drug_Click(object sender, EventArgs e)
     {
+
         List<Device> device = new List<Device>();
         device = DeviceService.QueryDeviceByNum(search_num.Text);
-        device_num.Text = device[0].Number.ToString();
-        device_name.Text = device[0].Name.ToString();
-        manufacter.Text = device[0].Manufacter.ToString();
-        single_price.Text = device[0].SinglePrice.ToString();
-        department_num.Text = device[0].departmentNum.ToString();
+        if (device.Count() == 0)
+        {
+            Response.Write("<script language=javascript>window.alert('该设备号不存在！请重新输入！');</script>");
+        }
+        else
+        {
+            device_num.Text = device[0].Number.ToString();
+            device_name.Text = device[0].Name.ToString();
+            manufacter.Text = device[0].Manufacter.ToString();
+            single_price.Text = device[0].SinglePrice.ToString();
+            department_num.Text = device[0].departmentNum.ToString();
+        }
+       
     }
 
     protected void update_drug_Click(object sender, EventArgs e)
     {
-        device_num.ReadOnly = false;
-        device_name.ReadOnly = false;
-        manufacter.ReadOnly = false;
-        single_price.ReadOnly = false;
-        department_num.ReadOnly = false;
+        if(device_num .Text .Equals ("")==false )
+        {
+           
+            device_name.ReadOnly = false;
+            manufacter.ReadOnly = false;
+            single_price.ReadOnly = false;
+            department_num.ReadOnly = false;
+        }
+        
     }
 
     protected void delete_drug_Click(object sender, EventArgs e)

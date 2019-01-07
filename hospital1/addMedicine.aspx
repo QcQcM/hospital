@@ -329,6 +329,7 @@
                                     <div class="col-9">
                                         <asp:TextBox ID ="price" runat="server" class="form-control"/>
                                          <asp:RequiredFieldValidator ID="Re3" ControlToValidate ="price"  runat ="server" ErrorMessage="必须填写药品单价" Display ="Dynamic" ForeColor="Red"/>
+                                           <asp:RangeValidator ID="rev2" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="药品单价必须在0~5000之间" ControlToValidate ="price" MaximumValue ="5000" MinimumValue ="0" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -336,7 +337,8 @@
                                     <div class="col-9">
                                         <asp:TextBox ID ="amount" runat="server" class="form-control"/>
                                          <asp:RequiredFieldValidator ID="Re4" ControlToValidate ="amount"  runat ="server" ErrorMessage="必须填写药品数量" Display ="Dynamic" ForeColor="Red"/>
-                                    </div>
+                                          <asp:RangeValidator ID="RangeValidator1" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="药品数量必须为1到5000之间的数字" ControlToValidate ="amount" MaximumValue ="5000" MinimumValue ="1" />
+                                        </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-password-input" style="width: 85px;" class=" col-form-label">适用症</label>

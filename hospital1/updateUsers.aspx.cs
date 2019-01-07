@@ -49,14 +49,18 @@ public partial class Views_updateUsers : System.Web.UI.Page
 
     protected void update_user_Click(object sender, EventArgs e)
     {
-        user_num.ReadOnly = false;
-        user_name.ReadOnly = false;
-        user_type.ReadOnly = false;
-        user_password.ReadOnly = false;
-        user_sex.ReadOnly = false;
-        user_age.ReadOnly = false;
-        user_phone.ReadOnly = false;
-        user_department.ReadOnly = false;
+        if(user_num .Text .Equals ("")==false )
+        {
+           
+            user_name.ReadOnly = false;
+            user_type.ReadOnly = false;
+            user_password.ReadOnly = false;
+            user_sex.ReadOnly = false;
+            user_age.ReadOnly = false;
+            user_phone.ReadOnly = false;
+            user_department.ReadOnly = false;
+        }
+       
     }
 
     protected void delete_user_Click(object sender, EventArgs e)

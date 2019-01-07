@@ -307,7 +307,8 @@
                     <!--***** BASIC FORM *****-->
                     <div class="card form" id="form1">
                         <div class="card-header">
-                            <h3>开药</h3>
+                            <h3>开药</h3>  
+                            <asp:Label ID="message" runat="server" Visible="false">提示信息</asp:Label>
                         </div>
                      <div class="col-md-12">
                         <div class="panel panel-default" >
@@ -408,6 +409,7 @@
                                     
                                     <div class="text-right" style ="margin-left :300px">
                                         <asp:Button  ID="ok" runat="server" text="确定" class="btn btn-outline-primary" OnClick="ok_Click"/>
+                                         <asp:HiddenField ID="hide" runat="server"  />
                                        
                                     </div>
                                 </div>

@@ -49,17 +49,77 @@ using System.Web;
             patient.AdmissionTime = dic["admission_time"].ToString();
             patient.DischargeTime = dic["discharge_time"].ToString();
             patient.IDNum = (String)dic["IDnum"];
+        try
+        {
             patient.BirthDate = dic["birth_date"].ToString();
+        }
+        catch (InvalidCastException e)
+        {
+            patient.BirthDate = "";
+        }
+        try
+        {
             patient.Nation = (String)dic["nation"];
+        }
+        catch (InvalidCastException e)
+        {
+            patient.Nation = "";
+        }
+        try
+        {
             patient.Country = (String)dic["country"];
+        }
+        catch (InvalidCastException)
+        {
+            patient.Country = "";
+        }
+        try
+        {
             patient.Marriage = (String)dic["marriage"];
+        }
+        catch(InvalidCastException e)
+        {
+            patient.Marriage = "";
+        }
+        try
+        {
             patient.Occupation = (String)dic["occupation"];
+        }
+         catch(InvalidCastException e)
+        {
+            patient.Occupation = "";
+        }
+
+           
             patient.NativePlace = (String)dic["nativeplace"];
+        try
+        {
             patient.BirthPlace = (String)dic["birth_place"];
+        }
+        catch(InvalidCastException e)
+        {
+            patient.BirthPlace = "";
+        }
+            
             patient.Address = (String)dic["address"];
-            //patient.Postcode = (String)dic["postcode"];
+        //patient.Postcode = (String)dic["postcode"];
+        try
+        {
             patient.WorkingPlace = (String)dic["workingplace"];
+        }
+        catch(InvalidCastException e)
+        {
+            patient.WorkingPlace = "";
+        }
+        try
+        {
             patient.WorkingTel = (String)dic["workingtel"];
+        }
+        catch(InvalidCastException e)
+        {
+            patient.WorkingTel = "";
+        }
+            
             patient.Diagonse = (String)dic["diagnose"];
             patient.Condition = (int)dic["conditions"];
             return patient;

@@ -14,7 +14,7 @@ public class FetchRecordService
     //插入取药记录
     public static int AddFetchRecords(String fetchNum, String fetchPerson, String medName,String patientName,int amount,String patientNum,String medNum)
     {
-        int nowAmout =(int) DatabaseTool.ExeclSqlReturnItem(String.Format(QUERY_FETCHRECORDS_SQL, fetchNum), "amount");
+        int nowAmout =(int) DatabaseTool.ExeclSqlReturnItem(String.Format(QUERY_FETCHRECORDS_SQL, medNum), "amount");
         nowAmout -= amount;
         if (nowAmout < 0) return -1;
         else
@@ -43,5 +43,18 @@ public class FetchRecordService
             }
         }
         return fetchRecords;
+    }
+    public static int JudgeFetchDuplicate(String fetchNum)
+    {
+        List<FetchRecords> fetchRecords = new List<FetchRecords>();
+        fetchRecords = FetchRecordService.QueryFetchByNum(fetchNum);
+        if (fetchRecords.Count == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
     }
 }

@@ -299,7 +299,7 @@
                 <div class="col-md-12">
                                        <div class="card form" id="form1">
                         <div class="card-header">
-                            <h3>开药</h3>
+                            <h3>取药</h3>
                         </div>
                      <div class="col-md-12" style="margin-top:20px">
                         <div class="panel panel-default" >

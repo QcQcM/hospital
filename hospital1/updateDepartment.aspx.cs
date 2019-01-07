@@ -41,9 +41,13 @@ public partial class Views_updateDepartment : System.Web.UI.Page
 
     protected void add_department_Click(object sender, EventArgs e)
     {
-        department_num1.ReadOnly = false;
-        department_name.ReadOnly = false;
-        department_user.ReadOnly = false;
+        if(Department_num .Text .Equals ("")==false )
+        {
+           
+            department_name.ReadOnly = false;
+            department_user.ReadOnly = false;
+        }
+        
     }
 
     protected void delete_department_Click(object sender, EventArgs e)

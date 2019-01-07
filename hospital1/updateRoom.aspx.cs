@@ -37,9 +37,13 @@ public partial class Views_updateRoom : System.Web.UI.Page
     }
 protected void add_room_Click(object sender, EventArgs e)
     {
-        room_num.ReadOnly = false;
-        room_location.ReadOnly = false;
-        room_department.ReadOnly = false;
+        if(room_num .Text .Equals ("")==false )
+        {
+            
+            room_location.ReadOnly = false;
+            room_department.ReadOnly = false;
+        }
+        
     }
 
     protected void delete_room_Click(object sender, EventArgs e)
