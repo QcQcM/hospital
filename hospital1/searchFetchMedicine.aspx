@@ -330,6 +330,7 @@
                                    <asp:TableHeaderCell>患者名</asp:TableHeaderCell>
                                      <asp:TableHeaderCell>所取药品数量</asp:TableHeaderCell>
                                      <asp:TableHeaderCell>患者编号</asp:TableHeaderCell>
+                                     <asp:TableHeaderCell>取药时间</asp:TableHeaderCell>
                                </asp:TableHeaderRow>
                                     </asp:Table>                       
                          </article>          

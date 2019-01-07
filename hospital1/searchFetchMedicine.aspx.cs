@@ -36,7 +36,7 @@ public partial class searchFetchMedicine : System.Web.UI.Page
             Label fetchNum = new Label();
             tableCell.Controls.Add(fetchNum);
             tableRow.Cells.Add(tableCell);
-            fetchNum.Text = list[i].Number.ToString();
+            fetchNum.Text = list[i].FetchNumber.ToString();
             //添加第二列：取药人
             tableCell = new TableCell();
             Label person = new Label();
@@ -48,7 +48,7 @@ public partial class searchFetchMedicine : System.Web.UI.Page
             Label medNum = new Label();
             tableCell.Controls.Add(medNum);
             tableRow.Cells.Add(tableCell);
-            medNum.Text = list[i].Name.ToString();
+            medNum.Text = list[i].medName.ToString();
             //添加第四列：患者名
             tableCell = new TableCell();
             Label patientName = new Label();
@@ -67,6 +67,13 @@ public partial class searchFetchMedicine : System.Web.UI.Page
             tableCell.Controls.Add(patientNum);
             tableRow.Cells.Add(tableCell);
             patientNum.Text = list[i].PatientNum.ToString();
+            Table1.Rows.Add(tableRow);
+            //添加第七列：取药时间
+            tableCell = new TableCell();
+            Label fetchTime = new Label();
+            tableCell.Controls.Add(fetchTime);
+            tableRow.Cells.Add(tableCell);
+            fetchTime.Text = list[i].FetchTime.ToString();
             Table1.Rows.Add(tableRow);
         }
     }

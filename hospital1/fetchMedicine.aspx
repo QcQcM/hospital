@@ -303,120 +303,35 @@
                         </div>
                      <div class="col-md-12" style="margin-top:20px">
                         <div class="panel panel-default" >
-                          
-                                <div class="table-responsive">
-                                    <table class="table-responsive" style ="width:900px;height:400px" cellpadding="0">
-                                            <tr class="bg-info text-white">
-                                              <td class="table-bordered td text-center "><strong>取药编号</strong></td>
-                                              <td class="table-bordered td text-center "><strong>取药人</strong></td>
-                                              <td class="table-bordered td text-center "><strong>药品名称</strong></td>
-                                              <td class="table-bordered td text-center "><strong>病人名字</strong></td>
-                                              <td class="table-bordered td text-center "><strong>数量</strong></td>
-                                              <td class="table-bordered td text-center "><strong>病人编号</strong></td>
-                                                 <td class="table-bordered td text-center "><strong>药品编号</strong></td>
-                                           </tr>
-                                          <tr>
-                                              <td><asp:TextBox ID="patient_num1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                                <td><asp:TextBox ID="med_num1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-                                            <tr>
-                                              <td><asp:TextBox ID="patient_num2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                                 <td><asp:TextBox ID="med_num2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="med_num3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                                <td><asp:TextBox ID="med_num4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                                <td><asp:TextBox ID="med_num5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="med_num6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="med_num7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="med_num8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                                <td><asp:TextBox ID="med_num9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-  <tr>
-                                              <td><asp:TextBox ID="patient_num10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="time10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="med_num10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                           </tr>
-                                        
-                                    </table>
-                                  
-                                    <div style ="margin-left :420px;margin-top:20px">
-                                        <asp:Button  ID="ok" runat="server" text="确定" class="btn btn-outline-primary" OnClick="ok_Click1"/>
-                                       
-                                    </div>
-                                </div>
-
-                            </div>
-                             
-                        </div>
+                            <asp:TextBox ID="patientNum" runat="server"></asp:TextBox>
+                            <asp:Button ID="searchOrders" runat="server" Text="搜索" OnClick="searchOrders_Click" CausesValidation="false" />
+                             <asp:Button  runat="server" ID="fetch" Text="取药" OnClick="fetch_Click" />                   
+                           <asp:GridView ID="notFetchOrders" runat="server" AutoGenerateColumns="false" CellPadding="3" CellSpacing="1" GridLines="None" AllowSorting="true">
+          <Columns>
+              <asp:TemplateField HeaderText="选择">
+                  <ItemTemplate>
+                      <asp:CheckBox ID="select" runat="server" Visible="true" />
+                  </ItemTemplate>
+               </asp:TemplateField>
+                 <asp:BoundField DataField="patient_num" HeaderText="患者编号" />
+                  <asp:BoundField DataField="doctor_num" HeaderText="医生编号" />
+                  <asp:BoundField DataField="order_time" HeaderText="开药时间" />
+                  <asp:BoundField DataField="amount" HeaderText="数量" />
+                  <asp:BoundField DataField="use_name" HeaderText="药品名" />   
+                   <asp:BoundField DataField="use_number" HeaderText="药品编号" /> 
+                    <asp:BoundField DataField="order_num" HeaderText="订单编号" />
+          </Columns>
+          <FooterStyle BackColor="#3399ff" ForeColor="Black" />
+          <RowStyle BackColor="#ccffff" ForeColor="Black" />
+          <SelectedRowStyle BackColor="#66ccff" Font-Bold="true" ForeColor="White" />
+          </asp:GridView>
+      </asp:GridView>
+                            <asp:Label Text="取药人" runat="server"></asp:Label>
+                            <asp:TextBox ID="fetchPerson" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ControlToValidate="fetchPerson" runat="server" ErrorMessage="必须填写取药人" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+      </div>
+                     
+      </div>
                     </div>
                 </div>
             </div>

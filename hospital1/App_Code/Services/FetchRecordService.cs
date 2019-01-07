@@ -8,23 +8,27 @@ using System.Web;
 /// </summary>
 public class FetchRecordService
 {
-    private const String INSERT_FETCHRECORDS_SQL = "insert into fetch_medicine(fetch_num,fetch_person,med_name,patient_name,amount,patient_num,med_num) values(\"{0}\",\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\",\"{6}\")";
+    private const String INSERT_FETCHRECORDS_SQL = "insert into fetch_medicine(fetch_person,med_name,patient_name,amount,patient_num,fetch_time) values(\"{0}\",\"{1}\",\"{2}\",{3},\"{4}\",\"{5}\")";
     private const String QUERY_FETCHRECORDS_SQL = "select * from fetch_medicine where patient_num=\"{0}\" ";
     private const String UPDATE_MEDICINE_AMOUNT_SQL = "update medicine set amount={0} where m_num=\"{1}\" ";
     //插入取药记录
-    public static int AddFetchRecords(String fetchNum, String fetchPerson, String medName,String patientName,int amount,String patientNum,String medNum)
+    public static int AddFetchRecords(List<FetchRecords> fetchRecords)
     {
-        int nowAmout =(int) DatabaseTool.ExeclSqlReturnItem(String.Format(QUERY_FETCHRECORDS_SQL, medNum), "amount");
-        nowAmout -= amount;
-        if (nowAmout < 0) return -1;
-        else
+        for (int i = 0; i < fetchRecords.Count; i++)
         {
-            DatabaseTool.ExecSql(String.Format(INSERT_FETCHRECORDS_SQL, fetchNum, fetchPerson, medName, patientName, amount, patientNum, medNum));
-            DatabaseTool.ExecSql(String.Format(UPDATE_MEDICINE_AMOUNT_SQL, nowAmout, medNum));
-            return 1;
+            int nowAmout = Convert.ToInt32(DatabaseTool.ExeclSqlReturnItem(String.Format("select * from medicine", fetchRecords[i].MedcineNum), "amount"));
+            nowAmout = nowAmout-fetchRecords[i].Amount;
+            if (nowAmout < 0) return -1;
+            else
+            {
+                DatabaseTool.ExecSql(String.Format(INSERT_FETCHRECORDS_SQL, fetchRecords[i].Person, fetchRecords[i].medName, fetchRecords[i].PatientName, fetchRecords[i].Amount, fetchRecords[i].PatientNum, fetchRecords[i].FetchTime));
+                DatabaseTool.ExecSql(String.Format(UPDATE_MEDICINE_AMOUNT_SQL, nowAmout, fetchRecords[i].MedcineNum));
+                DatabaseTool.ExecSql(String.Format("update orders set isfetch=1 where order_num =\"{0}\" ",fetchRecords[i].OrderNum));
+
+            }
+
         }
-        //取药，插入到取药记录表，还要更改药品信息表，将该药品的数量减去amount,先判断减去的是不是小于0，如果是，取药失败，返回-1
-      
+        return 1;
     }
     //查询取药记录
     public static List<FetchRecords> QueryFetchByNum(String patientNum)

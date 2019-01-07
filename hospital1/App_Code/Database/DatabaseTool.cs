@@ -95,4 +95,20 @@ public class DatabaseTool
             throw;
         }
     }
+    public static DataSet ExecSqlReturnDataSet(String sql)  //通过sql语句查询数据库中的数据，并将结果保存到DataSet数据集中，最终将该数据集中的查找结果的数据表返回
+    {
+        try
+        {
+            MySqlConnection mySqlConnection = DatabaseTool.GetSqlConnection();
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, mySqlConnection);
+            DataSet ds = new DataSet();
+            mySqlDataAdapter.Fill(ds);
+            mySqlConnection.Close();
+            return (ds);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
 }
