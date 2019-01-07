@@ -20,7 +20,8 @@ using System.Web;
        private const String SELECT_ALL_ADVICES_BY_ID = "select * from doctors_advice where p_num=\"{0}\"";
     //查询病人所有订单的总值
      private const String SELECT_ALL_PRICE= "select SUM(price) from orders where patient_num=\"{0}\"";
-
+    //在病人入院登记时，需要将分配给病人的病床设置为不可用
+    private const String UPDATE_BED_CONDITION = "update bed set isavailable=0 where b_num=\"{0}\" ";
     //执行插入操作
     public static int AddPatient(Patient patient)
         {
@@ -34,6 +35,7 @@ using System.Web;
             System.Diagnostics.Debug.Write(String.Format(INSERT_PATIENT_SQL, patient.Id, patient.Name, patient.Sex, patient.Age, patient.Tel, patient.Department, patient.DrugAllergy, patient.MedicalHistory, patient.RoomNum, patient.BedNum, patient.PhysicanNum, patient.AdmissionTime, "", patient.IDNum, patient.BirthDate, patient.Nation, patient.Country, patient.Marriage, patient.Occupation, patient.NativePlace, patient.BirthPlace, patient.Address, patient.WorkingPlace, patient.WorkingTel, patient.Diagonse, 1));
             if (DatabaseTool.ExecSql(String.Format(INSERT_PATIENT_SQL, patient.Id, patient.Name, patient.Sex, patient.Age, patient.Tel, patient.Department, patient.DrugAllergy, patient.MedicalHistory, patient.RoomNum, patient.BedNum, patient.PhysicanNum, patient.AdmissionTime, "", patient.IDNum, patient.BirthDate, patient.Nation, patient.Country, patient.Marriage, patient.Occupation, patient.NativePlace, patient.BirthPlace, patient.Address, patient.WorkingPlace, patient.WorkingTel, patient.Diagonse, 1)))
             {
+                DatabaseTool.ExecSql(String.Format(UPDATE_BED_CONDITION, patient.BedNum));
                 return DatabaseTool.GetLastInsertId();
             }
             else return -1;

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class manageMedicine : System.Web.UI.Page
 {
+    List<Medicine> medicine = new List<Medicine>();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["number"] == null)
@@ -22,24 +23,37 @@ public partial class manageMedicine : System.Web.UI.Page
     }
     protected void Search_Drug_Click(object sender, EventArgs e)
     {
-        List<Medicine> medicine = new List<Medicine>();
+       
         medicine = MedicineService.QueryMedicineByNum(search_num.Text);
-        drug_num.Text = medicine[0].Number.ToString();
-        drug_name.Text = medicine[0].Name.ToString();
-        manufacter.Text = medicine[0].Manufacter.ToString();
-        price.Text = medicine[0].Price.ToString();
-        amount.Text = medicine[0].Amount.ToString();
-        type.Text = medicine[0].Type.ToString();
+        if(medicine.Count == 0)
+        {
+            Response.Write("<script language=javascript>window.alert('输入的药品编号不存在！')</script>");
+        }
+        else
+        {
+            drug_num.Text = medicine[0].Number.ToString();
+            drug_name.Text = medicine[0].Name.ToString();
+            manufacter.Text = medicine[0].Manufacter.ToString();
+            price.Text = medicine[0].Price.ToString();
+            amount.Text = medicine[0].Amount.ToString();
+            type.Text = medicine[0].Type.ToString();
+        }
+        
     }
 
     protected void update_drug_Click(object sender, EventArgs e)
     {
-        drug_num.ReadOnly = false;
-        drug_name.ReadOnly = false;
-        manufacter.ReadOnly = false;
-        price.ReadOnly = false;
-        amount.ReadOnly = false;
-        type.ReadOnly = false;
+        System.Diagnostics.Debug.Write(medicine.Count);
+        if (drug_num .Text .Equals ("")==false )
+        {
+           
+            drug_name.ReadOnly = false;
+            manufacter.ReadOnly = false;
+            price.ReadOnly = false;
+            amount.ReadOnly = false;
+            type.ReadOnly = false;
+        }
+        
     }
 
     protected void delete_drug_Click(object sender, EventArgs e)

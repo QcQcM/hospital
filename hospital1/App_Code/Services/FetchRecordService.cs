@@ -14,7 +14,7 @@ public class FetchRecordService
     //插入取药记录
     public static int AddFetchRecords(String fetchNum, String fetchPerson, String medName,String patientName,int amount,String patientNum,String medNum)
     {
-        int nowAmout =(int) DatabaseTool.ExeclSqlReturnItem(String.Format(QUERY_FETCHRECORDS_SQL, fetchNum), "amount");
+        int nowAmout =(int) DatabaseTool.ExeclSqlReturnItem(String.Format(QUERY_FETCHRECORDS_SQL, medNum), "amount");
         nowAmout -= amount;
         if (nowAmout < 0) return -1;
         else
