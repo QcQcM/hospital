@@ -35,21 +35,34 @@ public partial class doctorMedicine : System.Web.UI.Page
         string[] order = new string[] { order1.Text, order2.Text, order3.Text, order4.Text, order5.Text, order6.Text, order7.Text, order8.Text, order9.Text, order10.Text };
         string[] time = new string[] { time1.Text, time2.Text, time3.Text, time4.Text, time5.Text, time6.Text, time7.Text, time8.Text, time9.Text, time10.Text };
 
-        for (i = 0; i < 10; i++)
+        int rowCount = 0;
+        while(rowCount < 10)
         {
-            if (patient_num[i] == "")
+            if (patient_num[rowCount] == "")
             {
                 break;
             }
             else
             {
-                if (examination[i].Equals("") || doctor[i].Equals("") || order[i].Equals("") || time[i].Equals("") || examination_num.Equals(""))
+                //先判断有没有空格
+                if (examination[rowCount].Equals("") || doctor[rowCount].Equals("") || order[rowCount].Equals("") || time[rowCount].Equals("") || examination_num.Equals(""))
                 {
                     Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorMedicine.aspx');</script>");
                 }
+                //如果没有空格，可以检查主键是否冲突
                 else
                 {
-                    OrderService.AddOrder(patient_num[i], examination_num[i], int.Parse(examination[i]), doctor[i], order[i], j, time[i]);
+                    if(OrderService.AddOrder(patient_num[rowCount], examination_num[rowCount], int.Parse(examination[rowCount]), doctor[rowCount], order[rowCount], j, time[rowCount])!=-1)
+                    {
+                        //如果主键不冲突，插入成功，当前插入行数加一，存入隐藏域
+                        rowCount++;
+                        message.Text ="输入的订单编号与数据库中重复，请重新输入，当前已成功插入"+ rowCount.ToString()+"行";
+                    }
+                    else
+                    {
+                        message.Visible = true;
+                    }
+                    
                 }
                 }
         }

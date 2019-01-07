@@ -348,8 +348,8 @@
                                     <label for="tel" style="width: 85px;" class=" col-form-label">手机</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="Tel" runat="server"  CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="Tel"  runat ="server" ErrorMessage="必须填写手机号" Font-Bold ="true" Display ="None"/>
-                                        <asp:RegularExpressionValidator  ID="TelValidator1" runat="server"  ControlToValidate="Tel" Display="Dynamic" ValidationExpression="/^1[34578]\d{9}$/" ErrorMessage="手机号格式不正确" ForeColor="Red"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="Tel"  runat ="server" ErrorMessage="必须填写手机号" Font-Bold ="true" Display ="Dynamic"/>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -357,14 +357,14 @@
                                     <div class="col-9">
                                         <asp:TextBox ID="idNum" runat="server"  CssClass="form-control"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="Req2" ControlToValidate ="idNum"  runat ="server" ErrorMessage="必须填写身份证号"  Display ="Dynamic" ForeColor="Red"/>
-                                           <asp:RegularExpressionValidator  ID="RegularExpressionValidator1" runat="server"  ControlToValidate="idNum" Display="Dynamic" ValidationExpression="/^1[34578]\d{9}$/" ErrorMessage="请输入格式正确的身份证号" ForeColor="Red"></asp:RegularExpressionValidator>
+                                           <asp:RegularExpressionValidator  ID="RegularExpressionValidator1" runat="server"  ControlToValidate="idNum" Display="Dynamic" ValidationExpression="^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$" ErrorMessage="请输入格式正确的身份证号" ForeColor="Red"></asp:RegularExpressionValidator>
                                     </div>
                                 </div>
                                  <div class="form-group row">
                                     <label for="age" style="width: 85px;" class=" col-form-label">年龄</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="Age" runat="server"  CssClass="form-control"></asp:TextBox>
-                                       <asp:RangeValidator ID="rev2" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="Age" MaximumValue ="120" MinimumValue ="1" />
+                                       <asp:RangeValidator ID="rev2" runat ="server" Type="Integer"  Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="Age" MaximumValue ="150" MinimumValue ="1" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
