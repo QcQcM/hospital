@@ -326,81 +326,81 @@
                                            </tr>
                                           <tr>
                                               <td><asp:TextBox ID="patient_num1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ReadOnly="true" ID="doctor1" R runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order1" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time1"  runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
                                             <tr>
                                               <td><asp:TextBox ID="patient_num2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ReadOnly="true" ID="doctor2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time2" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ReadOnly="true" ID="doctor3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time3" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ReadOnly="true" ID="doctor4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time4" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ReadOnly="true" ID="doctor5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time5" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ReadOnly="true" ID="doctor6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time6" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                                <td><asp:TextBox ID="doctor7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="order7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:TextBox ReadOnly="true" ID="order7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time7" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ID="doctor8" ReadOnly="true" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time8" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ID="doctor9" ReadOnly="true" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time9" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>
   <tr>
                                               <td><asp:TextBox ID="patient_num10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                              <td><asp:TextBox ID="examination_num10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                              <td><asp:DropDownList ID="examination_num10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:DropDownList></td>
                                               <td><asp:TextBox ID="examination10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
-                                               <td><asp:TextBox ID="doctor10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
+                                               <td><asp:TextBox ID="doctor10" ReadOnly="true" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="order10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%"></asp:TextBox></td>
                                               <td><asp:TextBox ID="time10" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" TextMode="Date"></asp:TextBox></td>
                                            </tr>

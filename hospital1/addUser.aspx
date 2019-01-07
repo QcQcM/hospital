@@ -381,7 +381,7 @@
                                         <label>年龄</label>
                                         <asp:TextBox ID="user_age" runat ="server" class="form-control"></asp:TextBox>
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="user_age"  runat ="server" ErrorMessage="必须填写年龄" Display ="Dynamic" ForeColor="Red"/>
-                       <asp:RangeValidator ID="rev2" runat ="server"Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" />
+                       <asp:RangeValidator ID="rev2" Type="Integer" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" />
                                           </div>  
                                     <div class="form-group">
                                         <label>所属科室</label>

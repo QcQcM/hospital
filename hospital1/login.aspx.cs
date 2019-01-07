@@ -36,6 +36,7 @@ public partial class login : System.Web.UI.Page
         else if(type ==3)
         {
             Session["number"] = LoginService.returnName(Request["username"].ToString(), Request["password"].ToString());
+            Session["doctorNum"] = Request["username"].ToString();
             Response.Redirect("./doctorMedicine.aspx");
             //第三类型 医生
         }

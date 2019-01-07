@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +15,48 @@ public partial class doctorOperation : System.Web.UI.Page
             Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
         }
         session.Text = Session["number"].ToString();
+        DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from operation");
+        examination_num1.DataSource = dt;
+        examination_num1.DataTextField = "o_num";
+        examination_num1.DataBind();
+        examination_num2.DataSource = dt;
+        examination_num2.DataTextField = "o_num";
+        examination_num2.DataBind();
+        examination_num3.DataSource = dt;
+        examination_num3.DataTextField = "o_num";
+        examination_num3.DataBind();
+        examination_num4.DataSource = dt;
+        examination_num4.DataTextField = "o_num";
+        examination_num4.DataBind();
+        examination_num5.DataSource = dt;
+        examination_num5.DataTextField = "o_num";
+        examination_num5.DataBind();
+        examination_num6.DataSource = dt;
+        examination_num6.DataTextField = "o_num";
+        examination_num6.DataBind();
+        examination_num7.DataSource = dt;
+        examination_num7.DataTextField = "o_num";
+        examination_num7.DataBind();
+        examination_num8.DataSource = dt;
+        examination_num8.DataTextField = "o_num";
+        examination_num8.DataBind();
+        examination_num9.DataSource = dt;
+        examination_num9.DataTextField = "o_num";
+        examination_num9.DataBind();
+        examination_num10.DataSource = dt;
+        examination_num10.DataTextField = "o_num";
+        examination_num10.DataBind();
+        //不可编辑的医生编号从session中获取，即当前用户的编号
+        doctor1.Text = Session["doctorNum"].ToString();
+        doctor2.Text = Session["doctorNum"].ToString();
+        doctor3.Text = Session["doctorNum"].ToString();
+        doctor4.Text = Session["doctorNum"].ToString();
+        doctor5.Text = Session["doctorNum"].ToString();
+        doctor6.Text = Session["doctorNum"].ToString();
+        doctor7.Text = Session["doctorNum"].ToString();
+        doctor8.Text = Session["doctorNum"].ToString();
+        doctor9.Text = Session["doctorNum"].ToString();
+        doctor10.Text = Session["doctorNum"].ToString();
     }
     protected void sign_up_Click(object sender, EventArgs e)
     {
