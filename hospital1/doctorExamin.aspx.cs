@@ -18,6 +18,9 @@ public partial class doctorExamin : System.Web.UI.Page
         DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from device");
         examination_num1.DataSource = dt;
         examination_num1.DataTextField = "d_num";
+        examination_num1.DataValueField = "d_num";
+
+
         examination_num1.DataBind();
         examination_num2.DataSource = dt;
         examination_num2.DataTextField = "d_num";
@@ -88,21 +91,27 @@ public partial class doctorExamin : System.Web.UI.Page
                 }
                 else
                 {
-                    if (OrderService.JudgeOrderDuplicate(order[i]) == -1)//-1有冲突
+                    /*if (OrderService.JudgeOrderDuplicate(order[i]) == -1)//-1有冲突
                     {
                         k = 1; break;
                     }
                     else
                     {
                         k = 0;//没冲突
-                    }
-
+                    }*/
+                    OrderService.AddOrder(patient_num[i], examination_num[i], doctor[i], order[i], j, time[i], examination[i]);
+                    patient_num1.Text = ""; patient_num2.Text = ""; patient_num3.Text = ""; patient_num4.Text = ""; patient_num5.Text = ""; patient_num6.Text = ""; patient_num7.Text = ""; patient_num8.Text = ""; patient_num9.Text = ""; patient_num10.Text = "";
+                    examination1.Text = ""; examination2.Text = ""; examination3.Text = ""; examination4.Text = ""; examination5.Text = ""; examination6.Text = ""; examination7.Text = ""; examination8.Text = ""; examination9.Text = ""; examination10.Text = "";
+                    examination_num1.Text = ""; examination_num2.Text = ""; examination_num3.Text = ""; examination_num4.Text = ""; examination_num5.Text = ""; examination_num6.Text = ""; examination_num7.Text = ""; examination_num8.Text = ""; examination_num9.Text = ""; examination_num10.Text = "";
+                    doctor1.Text = ""; doctor2.Text = ""; doctor3.Text = ""; doctor4.Text = ""; doctor5.Text = ""; doctor6.Text = ""; doctor7.Text = ""; doctor8.Text = ""; doctor9.Text = ""; doctor10.Text = "";
+                    order1.Text = ""; order2.Text = ""; order3.Text = ""; order4.Text = ""; order5.Text = ""; order6.Text = ""; order7.Text = ""; order8.Text = ""; order9.Text = ""; order10.Text = "";
+                    time1.Text = ""; time2.Text = ""; time3.Text = ""; time4.Text = ""; time5.Text = ""; time6.Text = ""; time7.Text = ""; time8.Text = ""; time9.Text = ""; time10.Text = "";
                 }
                
                  }
 
             }
-        if (k == 1)
+        /*if (k == 1)
         {
             Response.Write("<script language=javascript>window.alert('当前输入订单编号已存在，请重新检查！');</script>");
         }
@@ -113,12 +122,11 @@ public partial class doctorExamin : System.Web.UI.Page
                 OrderService.AddOrder(patient_num[s], examination_num[s], doctor[s], order[s], j, time[s], examination[s]);
                 patient_num1.Text = ""; patient_num2.Text = ""; patient_num3.Text = ""; patient_num4.Text = ""; patient_num5.Text = ""; patient_num6.Text = ""; patient_num7.Text = ""; patient_num8.Text = ""; patient_num9.Text = ""; patient_num10.Text = "";
                 examination1.Text = ""; examination2.Text = ""; examination3.Text = ""; examination4.Text = ""; examination5.Text = ""; examination6.Text = ""; examination7.Text = ""; examination8.Text = ""; examination9.Text = ""; examination10.Text = "";
-                examination_num1.Text = ""; examination_num2.Text = ""; examination_num3.Text = ""; examination_num4.Text = ""; examination_num5.Text = ""; examination_num6.Text = ""; examination_num7.Text = ""; examination_num8.Text = ""; examination_num9.Text = ""; examination_num10.Text = "";
                 doctor1.Text = ""; doctor2.Text = ""; doctor3.Text = ""; doctor4.Text = ""; doctor5.Text = ""; doctor6.Text = ""; doctor7.Text = ""; doctor8.Text = ""; doctor9.Text = ""; doctor10.Text = "";
                 order1.Text = ""; order2.Text = ""; order3.Text = ""; order4.Text = ""; order5.Text = ""; order6.Text = ""; order7.Text = ""; order8.Text = ""; order9.Text = ""; order10.Text = "";
                 time1.Text = ""; time2.Text = ""; time3.Text = ""; time4.Text = ""; time5.Text = ""; time6.Text = ""; time7.Text = ""; time8.Text = ""; time9.Text = ""; time10.Text = "";
             }
-        }
+        }*/
 
         
         }
