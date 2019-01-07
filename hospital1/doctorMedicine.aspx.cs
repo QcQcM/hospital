@@ -96,20 +96,26 @@ public partial class doctorMedicine : System.Web.UI.Page
                 //如果没有空格，可以检查主键是否冲突
                 else
                 {
-                    if(OrderService.JudgeOrderDuplicate(order [rowCount])==-1)//-1有冲突
-                    {
-                        i = 1;break;
-                    }
-                    else
-                    {
-                        i = 0;//没冲突
-                    }
-                    
+                    /* if(OrderService.JudgeOrderDuplicate(order [rowCount])==-1)//-1有冲突
+                     {
+                         i = 1;break;
+                     }
+                     else
+                     {
+                         i = 0;//没冲突
+                     }*/
+                    OrderService.AddOrder(patient_num[rowCount ], examination_num[rowCount ], int.Parse(examination[rowCount ]), doctor[rowCount ], order[rowCount ], j, time[rowCount ]);
+                    patient_num1.Text = ""; patient_num2.Text = ""; patient_num3.Text = ""; patient_num4.Text = ""; patient_num5.Text = ""; patient_num6.Text = ""; patient_num7.Text = ""; patient_num8.Text = ""; patient_num9.Text = ""; patient_num10.Text = "";
+                    examination1.Text = ""; examination2.Text = ""; examination3.Text = ""; examination4.Text = ""; examination5.Text = ""; examination6.Text = ""; examination7.Text = ""; examination8.Text = ""; examination9.Text = ""; examination10.Text = "";
+                    examination_num1.Text = ""; examination_num2.Text = ""; examination_num3.Text = ""; examination_num4.Text = ""; examination_num5.Text = ""; examination_num6.Text = ""; examination_num7.Text = ""; examination_num8.Text = ""; examination_num9.Text = ""; examination_num10.Text = "";
+                    doctor1.Text = ""; doctor2.Text = ""; doctor3.Text = ""; doctor4.Text = ""; doctor5.Text = ""; doctor6.Text = ""; doctor7.Text = ""; doctor8.Text = ""; doctor9.Text = ""; doctor10.Text = "";
+                    order1.Text = ""; order2.Text = ""; order3.Text = ""; order4.Text = ""; order5.Text = ""; order6.Text = ""; order7.Text = ""; order8.Text = ""; order9.Text = ""; order10.Text = "";
+                    time1.Text = ""; time2.Text = ""; time3.Text = ""; time4.Text = ""; time5.Text = ""; time6.Text = ""; time7.Text = ""; time8.Text = ""; time9.Text = ""; time10.Text = "";
                 }
             }
             
         }
-        if(i==1)
+        /*if(i==1)
         {
             Response.Write("<script language=javascript>window.alert('当前输入订单编号已存在，请重新检查！');</script>");
         }
@@ -125,7 +131,7 @@ public partial class doctorMedicine : System.Web.UI.Page
                 order1.Text = ""; order2.Text = ""; order3.Text = ""; order4.Text = ""; order5.Text = ""; order6.Text = ""; order7.Text = ""; order8.Text = ""; order9.Text = ""; order10.Text = "";
                 time1.Text = ""; time2.Text = ""; time3.Text = ""; time4.Text = ""; time5.Text = ""; time6.Text = ""; time7.Text = ""; time8.Text = ""; time9.Text = ""; time10.Text = "";
             }
-        }
+        }*/
        
         //清空数据
         
