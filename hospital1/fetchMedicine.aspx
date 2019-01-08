@@ -273,9 +273,11 @@
 <!--====================================================
                     PAGE CONTENT
 ======================================================-->
+  
     <div class="page-content d-flex align-items-stretch">
        
         <!--***** SIDE NAVBAR *****-->
+
         <nav class="side-navbar">
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
@@ -303,10 +305,18 @@
                         </div>
                      <div class="col-md-12" style="margin-top:20px">
                         <div class="panel panel-default" >
-                            <asp:TextBox ID="patientNum" runat="server"></asp:TextBox>
-                            <asp:Button ID="searchOrders" runat="server" Text="搜索" OnClick="searchOrders_Click" CausesValidation="false" />
-                             <asp:Button  runat="server" ID="fetch" Text="取药" OnClick="fetch_Click" />                   
-                           <asp:GridView ID="notFetchOrders" runat="server" AutoGenerateColumns="false" CellPadding="3" CellSpacing="1" GridLines="None" AllowSorting="true">
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td><asp:Textbox id="patientNum" runat="server"  class="form-control" placeholder="请输入病人编号" ></asp:Textbox></td>
+                                                <td><asp:Button ID="searchOrders" runat="server" Text="搜索 " class="btn btn-link" CausesValidation="false" OnClick="searchOrders_Click1"/></td>
+                                                <td><asp:TextBox id="fetchPerson" runat="server" class="form-control" placeholder="请输入取药人"></asp:TextBox></td>
+                                                <td> <asp:Button ID="fetch" Text="取药" runat="server" class="btn btn-link" CausesValidation="false" OnClick="fetch_Click1"/></td>
+                                            </tr>
+                                            
+                                        </table>
+                                    
+                                   </br>
+          <asp:GridView ID="notFetchOrders" runat="server" AutoGenerateColumns="false" CellPadding="3" CellSpacing="1" GridLines="None" AllowSorting="true" CssClass="mGrid"  PagerStyle-CssClass="pgr"   AlternatingRowStyle-CssClass="alt">
           <Columns>
               <asp:TemplateField HeaderText="选择">
                   <ItemTemplate>
@@ -321,13 +331,10 @@
                    <asp:BoundField DataField="use_number" HeaderText="药品编号" /> 
                     <asp:BoundField DataField="order_num" HeaderText="订单编号" />
           </Columns>
-          <FooterStyle BackColor="#3399ff" ForeColor="Black" />
-          <RowStyle BackColor="#ccffff" ForeColor="Black" />
-          <SelectedRowStyle BackColor="#66ccff" Font-Bold="true" ForeColor="White" />
+         
           </asp:GridView>
-      </asp:GridView>
-                            <asp:Label Text="取药人" runat="server"></asp:Label>
-                            <asp:TextBox ID="fetchPerson" runat="server"></asp:TextBox>
+   
+                      
                             <asp:RequiredFieldValidator ControlToValidate="fetchPerson" runat="server" ErrorMessage="必须填写取药人" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
       </div>
                      
@@ -338,6 +345,44 @@
         </div>
     </div>
 
+       <style type="text/css">
+          .mGrid {    
+                width: 100%;    
+                background-color: #fff;    
+                margin: 5px 0 10px 0;    
+                border: solid 1px #525252;    
+                border-collapse:collapse;    
+              }   
+
+.mGrid td {    
+padding: 2px;    
+ border: solid 1px #c1c1c1;    
+color: #717171;    
+}   
+
+.mGrid th {    
+padding: 4px 2px;    
+ color: #fff;    
+ background: #424242 url(grd_head.png) repeat-x top;    
+ border-left: solid 1px #525252;    
+ font-size: 0.9em;    
+}   
+
+.mGrid .alt { background: #fcfcfc url(grd_alt.png) repeat-x top; }   
+.mGrid .pgr { background: #424242 url(grd_pgr.png) repeat-x top; }   
+.mGrid .pgr table { margin: 5px 0; }   
+.mGrid .pgr td {    
+border-width: 0;    
+padding: 0 6px;    
+ border-left: solid 1px #666;    
+  font-weight: bold;    
+ color: #fff;    
+ line-height: 12px;    
+}      
+
+.mGrid .pgr a { color: #666; text-decoration: none; }   
+.mGrid .pgr a:hover { color: #000; text-decoration: none; }  
+       </style>
     <!--Global Javascript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper/popper.min.js"></script>
