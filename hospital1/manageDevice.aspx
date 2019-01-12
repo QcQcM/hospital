@@ -39,7 +39,7 @@
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
                     <div class="navbar-header">
-                       
+                       <a id="toggle-btn" href="#" class="menu-btn active">
                             <span></span>
                             <span></span>
                             <span></span>
