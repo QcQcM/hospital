@@ -296,7 +296,7 @@
                     <!--***** 药品出库 *****-->
                    <div class="card form" id="form1">
                         <div class="card-header">
-                            <h3><strong>库存管理</strong></h3>
+                            <h3><strong>设备管理</strong></h3>
                         </div>
                         <br>
                  
@@ -305,7 +305,7 @@
                            
                             <div class="panel-body" >
                                     <div class="form-group" style="margin-left:300px">
-                                    <label><strong>药品编号</strong></label>
+                                    <label><strong>设备编号</strong></label>
                                     <asp:Textbox id="search_num" runat="server" BorderStyle="Solid"></asp:Textbox>
                                      
                                     <asp:Button ID="Search_Drug" runat="server" Text="搜索 " class="btn btn-link" OnClick="Search_Drug_Click"/> 
@@ -317,7 +317,7 @@
                                               <td class="table-bordered td text-center "><strong>设备名</strong></td>
                                               <td class="table-bordered td text-center "><strong>生产厂家</strong></td>
                                               <td class="table-bordered td text-center "><strong>单价</strong></td>
-                                              <td class="table-bordered td text-center "><strong>所属科室编号</strong></td>
+                                              <td class="table-bordered td text-center "><strong>所属科室</strong></td>
                                            </tr>
                                            <tr>
                                               <td><asp:TextBox ID="device_num" runat="server" class="table-bordered td text-center" Width ="100%" Height ="100%" readonly="true"></asp:TextBox></td>

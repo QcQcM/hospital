@@ -18,52 +18,61 @@ public partial class admissionRegistration : System.Web.UI.Page
         }
         session.Text = Session["number"].ToString();
         //为籍贯和出生地的省下拉框绑定数据源
-        DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from province");
-           NativeProvinceList.DataSource = dt;
-           NativeProvinceList.DataTextField = "provinceName";
-          NativeProvinceList.DataValueField = "provinceNum";
-           NativeProvinceList.DataBind();
+        if(!IsPostBack)
+        {
+            DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from province");
+            NativeProvinceList.DataSource = dt;
+            NativeProvinceList.DataTextField = "provinceName";
+            NativeProvinceList.DataValueField = "provinceNum";
+            NativeProvinceList.DataBind();
             BirthProvince.DataSource = dt;
             BirthProvince.DataTextField = "provinceName";
-        BirthProvince.DataValueField = "provinceNum";
-        BirthProvince.DataBind();
+            BirthProvince.DataValueField = "provinceNum";
+            BirthProvince.DataBind();
 
-        //为籍贯和出生地的城市的下拉框绑定数据源
-        dt = DatabaseTool.ExecSqlReturnTable("select * from city");
-        NativeCityList.DataSource = dt;
-        NativeCityList.DataTextField = "city_name";
-        NativeCityList.DataValueField = "city_num";
-        NativeCityList.DataBind();
-        BirthCity.DataSource = dt;
-        BirthCity.DataTextField = "city_name";
-        BirthCity.DataValueField = "city_num";
-        BirthCity.DataBind();
+            //为籍贯和出生地的城市的下拉框绑定数据源
+            dt = DatabaseTool.ExecSqlReturnTable("select * from city");
+            NativeCityList.DataSource = dt;
+            NativeCityList.DataTextField = "city_name";
+            NativeCityList.DataValueField = "city_num";
+            NativeCityList.DataBind();
+            BirthCity.DataSource = dt;
+            BirthCity.DataTextField = "city_name";
+            BirthCity.DataValueField = "city_num";
+            BirthCity.DataBind();
 
+            /* //为这五个下拉框添加item0
+             BirthCity.Items.Insert(0, "请选择市");
+             NativeProvinceList.Items.Insert(0, "请选择省或直辖市");
+             department.Items.Insert(0, "请选择科室");
+             BirthProvince.Items.Insert(0, "请选择省或直辖市");
+             NativeCityList.Items.Insert(0, "请选择市");*/
+
+            //为科室下拉框绑定数据源
+            dt = DatabaseTool.ExecSqlReturnTable("select * from department");
+            department.DataSource = dt;
+            department.DataTextField = "d_name";
+            department.DataBind();
+
+            //为主治医师编号下拉框绑定数据源
+            dt = DatabaseTool.ExecSqlReturnTable("select * from users where type=3");
+            physician.DataSource = dt;
+            physician.DataTextField = "u_num";
+            physician.DataBind();
+
+            //为病房添加下拉框绑定数据源
+            dt = DatabaseTool.ExecSqlReturnTable("select * from room");
+            roomNumber.DataSource = dt;
+            roomNumber.DataTextField = "r_num";
+            roomNumber.DataBind();
+
+            //为病床添加下拉框绑定数据源，必须是可用的病床
+            dt = DatabaseTool.ExecSqlReturnTable("select * from bed where isavailable=1");
+            bedNumber.DataSource = dt;
+            bedNumber.DataTextField = "b_num";
+            bedNumber.DataBind();
+        }
         
-
-        //为科室下拉框绑定数据源
-        dt = DatabaseTool.ExecSqlReturnTable("select * from department");
-        department.DataSource = dt;
-        department.DataTextField = "d_name";
-        department.DataBind();
-
-        //为主治医师编号下拉框绑定数据源
-        dt = DatabaseTool.ExecSqlReturnTable("select * from users where type=3");
-        physician.DataSource = dt;
-        physician.DataTextField = "u_num";
-        physician.DataBind();
-
-        //为病房添加下拉框绑定数据源
-        dt = DatabaseTool.ExecSqlReturnTable("select * from room");
-        roomNumber.DataSource = dt;
-        roomNumber.DataTextField = "r_num";
-        roomNumber.DataBind();
-
-        //为病床添加下拉框绑定数据源，必须是可用的病床
-        dt = DatabaseTool.ExecSqlReturnTable("select * from bed where isavailable=1");
-        bedNumber.DataSource = dt;
-        bedNumber.DataTextField = "b_num";
-        bedNumber.DataBind();
 
     }
     protected void sign_up_Click(object sender, EventArgs e)
@@ -71,7 +80,7 @@ public partial class admissionRegistration : System.Web.UI.Page
         Session["number"] = null;
         Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
     }
-    protected void NativeProvinceList_SelectedIndexChanged(object sender, EventArgs e)
+  protected void NativeProvinceList_SelectedIndexChanged(object sender, EventArgs e)
     {
        // Response.Write("<script>alert('我响应了！')</script>");
         String proID = this.NativeProvinceList.SelectedValue;
@@ -121,8 +130,8 @@ public partial class admissionRegistration : System.Web.UI.Page
         patient.Country = nationality.Text;
         patient.Marriage = MarriageList.Text;
         patient.Occupation = job.Text;
-        patient.NativePlace = this.NativeProvinceList.Text + this.NativeCityList.Text;
-        patient.BirthPlace = this.BirthProvince.Text + BirthCity.Text;
+        patient.NativePlace = this.NativeProvinceList.SelectedItem .Text .Trim () + this.NativeCityList.SelectedItem .Text .Trim ();
+        patient.BirthPlace = this.BirthProvince.SelectedItem .Text .Trim () + BirthCity.SelectedItem .Text .Trim ();
         patient.Address = livingAddress.Text;
         patient.WorkingPlace = workingAddress.Text;
         patient.WorkingTel = workingTel.Text;

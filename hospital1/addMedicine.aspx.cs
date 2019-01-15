@@ -26,6 +26,12 @@ public partial class addMedicine : System.Web.UI.Page
         if(MedicineService.AddMedicine(drug_num.Text, drug_name.Text, manufacturer.Text, Convert.ToDecimal(price.Text), int.Parse(amount.Text), type.Text) != -1)
         {
             Response.Write("<script language=javascript>window.alert('添加药品成功');</script>");
+            drug_num.Text = "";
+            drug_name.Text = "";
+            manufacturer.Text = "";
+            price.Text = "";
+            amount.Text = "";
+            type.Text = "";
         }
         else
         {

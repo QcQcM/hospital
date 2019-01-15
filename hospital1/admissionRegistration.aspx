@@ -362,6 +362,7 @@
                                     <div class="col-9">
                                         <asp:TextBox ID="Age" runat="server"  CssClass="form-control"></asp:TextBox>
                                        <asp:RangeValidator ID="rev2" runat ="server" Type="Integer"  Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="Age" MaximumValue ="150" MinimumValue ="1" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="Age"  runat ="server" ErrorMessage="必须填写年龄" Display ="Dynamic" ForeColor="Red"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -385,7 +386,7 @@
                                  <div class="form-group row">
                                     <label for="jiguan" style="width: 85px;" class=" col-form-label">籍贯</label>
                                     <div class="col-9">
-                                        <asp:DropDownList ID="NativeProvinceList" runat="server"  style="width: 74px" >
+                                        <asp:DropDownList ID="NativeProvinceList" runat="server"  style="width: 74px"  >
                                         </asp:DropDownList>
                                         <label for="sheng" style="width: 20px;">省</label>
                                         <asp:RequiredFieldValidator ID="Rev5" ControlToValidate ="NativeProvinceList"  runat ="server" ErrorMessage="必须填写籍贯" Display ="Dynamic" ForeColor="Red"/>

@@ -29,6 +29,9 @@ public partial class Views_addDepartment : System.Web.UI.Page
         if(DepartmentService.AddDepartment(text1.Text, TextBox2.Text, TextBox3.Text)!=-1)
         {
             Response.Write("<script language=javascript>window.alert('添加科室成功');</script>");
+            text1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
         }
         else
         {
