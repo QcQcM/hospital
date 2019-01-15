@@ -360,8 +360,8 @@
                                     <div class="form-group">
                                         <label>性别</label>
                                         <asp:DropDownList ID="user_sex" runat="server" class="form-control">
-                                        <asp:ListItem Text="男" Value="male" Selected ="True" ></asp:ListItem>
-                                        <asp:ListItem Text ="女" Value="female"></asp:ListItem>
+                                        <asp:ListItem Text="男" Value="男" Selected ="True" ></asp:ListItem>
+                                        <asp:ListItem Text ="女" Value="女"></asp:ListItem>
                                         </asp:DropDownList>
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="user_sex"  runat ="server" ErrorMessage="必须填写性别" Display ="Dynamic" ForeColor="Red"/>  
 
@@ -378,11 +378,11 @@
                                         <label>年龄</label>
                                         <asp:TextBox ID="user_age" runat ="server" class="form-control"></asp:TextBox>
                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate ="user_age"  runat ="server" ErrorMessage="必须填写年龄" Display ="Dynamic" ForeColor="Red"/>
-                       <asp:RangeValidator ID="rev2" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" />
+                       <asp:RangeValidator ID="rev2" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="年龄必须在1-120之间" ControlToValidate ="user_age" MaximumValue ="120" MinimumValue ="1" Type ="Integer"  />
                                           </div>  
                                     <div class="form-group">
                                         <label>所属科室</label>
-                                        <asp:DropDownList ID="user_department" runat="server" class="form-control">
+                                        <asp:DropDownList ID="user_department" runat="server" class="form-control" OnSelectedIndexChanged="user_department_SelectedIndexChanged">
                                         
                                         </asp:DropDownList>
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="user_department"  runat ="server" ErrorMessage="必须填写所属科室" Display ="Dynamic" ForeColor="Red"/>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +15,15 @@ public partial class addDevice : System.Web.UI.Page
             Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
         }
         session.Text = Session["number"].ToString();
+        if(!IsPostBack )
+        {
+            DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from department");
+            depart_num.DataSource = dt;
+            depart_num.DataTextField = "d_name";
+            depart_num.DataBind();
+        }
+       
+
     }
     protected void sign_up_Click(object sender, EventArgs e)
     {
@@ -23,9 +33,14 @@ public partial class addDevice : System.Web.UI.Page
 
     protected void Add_Click(object sender, EventArgs e)
     {
-        if (DeviceService.AddDevice(device_num.Text, device_name.Text, manufacturer.Text, Convert.ToDecimal(single_price.Text), depart_num.Text)!=-1)
+        if (DeviceService.AddDevice(device_num.Text, device_name.Text, manufacturer.Text, Convert.ToDecimal(single_price.Text), depart_num.Text )!=-1)
         {
             Response.Write("<script language=javascript>window.alert('添加设备成功！');</script>");
+            device_num.Text = "";
+            device_name.Text = "";
+            manufacturer.Text = "";
+            single_price.Text = "";
+            
         }
         else
         {

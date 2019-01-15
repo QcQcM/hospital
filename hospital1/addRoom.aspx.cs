@@ -27,6 +27,9 @@ public partial class Views_addRoom : System.Web.UI.Page
        if(RoomService.AddRoom(room_num.Text, room_location.Text, room_department.Text)!= -1){
             {
                 Response.Write("<script language=javascript>window.alert('添加病房成功');</script>");
+                room_num.Text = "";
+                room_location.Text = "";
+                room_department.Text = "";
             }
         }
         else

@@ -337,10 +337,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="example-tel-input" style="width: 85px;" class=" col-form-label">所属科室编号</label>
+                                    <label for="example-tel-input" style="width: 85px;" class=" col-form-label">所属科室</label>
                                     <div class="col-9">
-                                        <asp:TextBox ID ="depart_num" runat="server" class="form-control"/>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat ="server" ErrorMessage="必须填写所属科室编号" Display ="Dynamic" ForeColor="Red" ControlToValidate ="depart_num" />
+                                        <asp:DropDownlist ID ="depart_num" runat="server" class="form-control"/>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat ="server" ErrorMessage="必须填写所属科室" Display ="Dynamic" ForeColor="Red" ControlToValidate ="depart_num" />
 
                                     </div>
                                 </div>
