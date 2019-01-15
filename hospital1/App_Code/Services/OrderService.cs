@@ -67,8 +67,7 @@ public class OrderService
         {
             return -1;
         }
-        System.Diagnostics.Debug.Write((String.Format(INSERT_ORDER_SQL,patientNum,useNum,1,doctorNum,orderNum,type,System.DateTime.Now.ToString(),use_time, price, useName)));
-        if (DatabaseTool.ExecSql(String.Format(INSERT_ORDER_SQL,patientNum,useNum,1,doctorNum,orderNum, type,"2019/01/01",use_time,price,useName,0)))
+        if (DatabaseTool.ExecSql(String.Format(INSERT_ORDER_SQL,patientNum,useNum,1,doctorNum,orderNum, type,System.DateTime.Now.ToString(),use_time,price,useName,0)))
         {
             return DatabaseTool.GetLastInsertId();
 

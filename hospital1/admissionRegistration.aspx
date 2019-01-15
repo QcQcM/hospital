@@ -345,7 +345,7 @@
                                     <label for="tel" style="width: 85px;" class=" col-form-label">手机</label>
                                     <div class="col-9">
                                         <asp:TextBox ID="Tel" runat="server"  CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="Tel"  runat ="server" ErrorMessage="必须填写手机号" Font-Bold ="true" Display ="Dynamic"/>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="Tel"  runat ="server" ErrorMessage="必须填写手机号" ForeColor="Red" Display ="Dynamic"/>
                                         
                                     </div>
                                 </div>
