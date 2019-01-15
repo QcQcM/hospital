@@ -34,7 +34,7 @@ public partial class searchPatientInformation : System.Web.UI.Page
         else
         {
             //个人信息
-            patient_name.Text = patient[0].Id.ToString();
+            patient_name.Text = patient[0].Name.ToString();
             patient_sex.Text = patient[0].Sex.ToString();
             patient_number.Text = patient[0].Id.ToString();
             patient_birthday.Text = patient[0].BirthDate.ToString();
