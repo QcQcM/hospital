@@ -260,3 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 /hospital1/packages.config
+/hospital1/text1.aspx
+/hospital1/text1.aspx.cs
+/hospital1/text1.aspx.cs

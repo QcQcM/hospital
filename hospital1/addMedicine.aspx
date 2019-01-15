@@ -337,7 +337,7 @@
                                     <div class="col-9">
                                         <asp:TextBox ID ="amount" runat="server" class="form-control"/>
                                          <asp:RequiredFieldValidator ID="Re4" ControlToValidate ="amount"  runat ="server" ErrorMessage="必须填写药品数量" Display ="Dynamic" ForeColor="Red"/>
-                                          <asp:RangeValidator ID="RangeValidator1" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="药品数量必须为1到5000之间的数字" ControlToValidate ="amount" MaximumValue ="5000" MinimumValue ="1" />
+                                          <asp:RangeValidator ID="RangeValidator1" runat ="server" Display ="Dynamic" ForeColor="Red" ErrorMessage ="药品数量必须为1到5000之间的数字" ControlToValidate ="amount" Type="Integer" MaximumValue ="5000" MinimumValue ="1" />
                                         </div>
                                 </div>
                                 <div class="form-group row">

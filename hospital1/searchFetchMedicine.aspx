@@ -33,11 +33,12 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
+                
+            </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
                     <div class="navbar-header">
-                     
-                        <a id="toggle-btn" href="#" class="menu-btn active">
+                       <a id="toggle-btn" href="#" class="menu-btn active">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -258,11 +259,9 @@
                               </div>
                            </div>
                       </div>
-                      </div>
                     </nav>
                 </ul> 
             </div>
-                
         </nav>
     </header>
 
