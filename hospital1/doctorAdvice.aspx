@@ -313,14 +313,14 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" style="width: 85px;margin-left:10px" class=" col-form-label" >医生编号</label>
                                     <div class="col-9">
-                                        <asp:TextBox runat="server" ID="doctor_num" class="form-control" />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate ="doctor_num"  runat ="server" ErrorMessage="必须填写医生编号" Display ="Dynamic" ForeColor="Red"/> 
+                                        <asp:TextBox runat="server" ID="doctor_num" class="form-control" ReadOnly="true" />
+                                       
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="example-search-input" style="width: 85px;margin-left:10px" class=" col-form-label">病人编号</label>
+                                    <label for="example-search-input" style="width: 85px;margin-left:10px" class=" col-form-label">病人姓名</label>
                                     <div class="col-9">
-                                        <asp:TextBox runat="server" ID="patient_num" class="form-control" />
+                                        <asp:DropDownList runat="server" ID="patient_num" class="form-control" />
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate ="patient_num"  runat ="server" ErrorMessage="必须填写病人编号" Display ="Dynamic" ForeColor="Red"/> 
                                     </div>
                                 </div>
@@ -329,9 +329,9 @@
                             <div class="col-md-6">
                                
                                 <div class="form-group row">
-                                    <label for="example-date-input" style="width: 85px;margin-left:10px" class=" col-form-label">医生姓名</label>
+                                    <label for="example-date-input" style="width: 85px;margin-left:10px" class=" col-form-label" >医生姓名</label>
                                     <div class="col-9">
-                                        <asp:TextBox runat="server" ID="doctor_name" class="form-control" />
+                                        <asp:TextBox runat="server" ID="doctor_name" class="form-control" ReadOnly="true" />
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate ="doctor_name"  runat ="server" ErrorMessage="必须填写医生姓名" Display ="Dynamic" ForeColor="Red"/> 
                                     </div>
                                 </div>

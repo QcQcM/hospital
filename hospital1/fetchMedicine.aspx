@@ -307,7 +307,7 @@
                                                 <td><asp:Textbox id="patientNum" runat="server"  class="form-control" placeholder="请输入病人编号" ></asp:Textbox></td>
                                                 <td><asp:Button ID="searchOrders" runat="server" Text="搜索 " class="btn btn-link" CausesValidation="false" OnClick="searchOrders_Click1"/></td>
                                                 <td><asp:TextBox id="fetchPerson" runat="server" class="form-control" placeholder="请输入取药人"></asp:TextBox></td>
-                                                <td> <asp:Button ID="fetch" Text="取药" runat="server" class="btn btn-link" CausesValidation="false" OnClick="fetch_Click1"/></td>
+                                                <td> <asp:Button ID="fetch" Text="取药" runat="server" class="btn btn-link"  OnClick="fetch_Click1"/></td>
                                             </tr>
                                             
                                         </table>

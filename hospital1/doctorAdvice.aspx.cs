@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,6 +15,13 @@ public partial class doctorAdvice : System.Web.UI.Page
                 Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
             }
         session.Text = Session["number"].ToString();
+        doctor_num.Text = Session["doctorNum"].ToString();
+        doctor_name.Text = Session["number"].ToString();
+        DataTable dt = DatabaseTool.ExecSqlReturnTable("select * from patient where attending_physican_num=" + Session["doctorNum"].ToString());
+        patient_num.DataSource = dt;
+        patient_num.DataTextField = "p_name";
+        patient_num.DataValueField = "p_number";
+        patient_num.DataBind();
     }
     protected void sign_up_Click(object sender, EventArgs e)
     {

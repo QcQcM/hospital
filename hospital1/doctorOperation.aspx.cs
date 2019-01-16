@@ -84,7 +84,7 @@ public partial class doctorOperation : System.Web.UI.Page
             {
                 if (doctor[i].Equals("") || order[i].Equals("") || time[i].Equals("") || examination_num.Equals(""))
                 {
-                    Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorOperation.aspx');</script>");
+                    Response.Write("<script language=javascript>window.alert('输入有空格！');");
                 }
                 else
                 {

@@ -41,12 +41,12 @@ public partial class admissionRegistration : System.Web.UI.Page
             BirthCity.DataValueField = "city_num";
             BirthCity.DataBind();
 
-            /* //为这五个下拉框添加item0
+            //为这五个下拉框添加item0
              BirthCity.Items.Insert(0, "请选择市");
              NativeProvinceList.Items.Insert(0, "请选择省或直辖市");
              department.Items.Insert(0, "请选择科室");
              BirthProvince.Items.Insert(0, "请选择省或直辖市");
-             NativeCityList.Items.Insert(0, "请选择市");*/
+             NativeCityList.Items.Insert(0, "请选择市");
 
             //为科室下拉框绑定数据源
             dt = DatabaseTool.ExecSqlReturnTable("select * from department");

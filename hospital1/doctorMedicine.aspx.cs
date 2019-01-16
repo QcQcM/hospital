@@ -65,7 +65,7 @@ public partial class doctorMedicine : System.Web.UI.Page
     protected void sign_up_Click(object sender, EventArgs e)
     {
         Session["number"] = null;
-        Response.Write("<script language=javascript>window.alert('请先登录！');window.location.href=('login.aspx');</script>");
+        Response.Write("<script language=javascript>window.alert('请先登录！');");
     }
 
     protected void ok_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ public partial class doctorMedicine : System.Web.UI.Page
                 //先判断有没有空格
                 if (examination[rowCount].Equals("") || doctor[rowCount].Equals("") || order[rowCount].Equals("") ||examination_num.Equals(""))
                 {
-                    Response.Write("<script language=javascript>window.alert('输入有空格！');window.location.href=('doctorMedicine.aspx');</script>");
+                    Response.Write("<script language=javascript>window.alert('输入有空格！');</script>");
                 }
                 //如果没有空格，可以检查主键是否冲突
                 else

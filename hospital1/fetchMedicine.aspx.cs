@@ -83,7 +83,7 @@ public partial class fetchMedicine : System.Web.UI.Page
                 f.Person = fetchPerson.Text;
                 f.medName = notFetchOrders.Rows[i].Cells[5].Text.ToString();
                 f.Amount = Convert.ToInt32(notFetchOrders.Rows[i].Cells[4].Text);
-                f.PatientName = DatabaseTool.ExeclSqlReturnItem(String.Format("select * from patient where p_number =\"{0}\" ", f.PatientName), "p_name").ToString();
+                f.PatientName = DatabaseTool.ExeclSqlReturnItem(String.Format("select * from patient where p_number =\"{0}\" ", f.PatientNum), "p_name").ToString();
                 f.MedcineNum = notFetchOrders.Rows[i].Cells[6].Text.ToString();
                 f.OrderNum = notFetchOrders.Rows[i].Cells[7].Text.ToString();
                 fetchRecords.Add(f);
